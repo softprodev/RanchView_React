@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "@emotion/styled";
 import tw from "twin.macro";
+import { graphql } from "gatsby";
 
 import Layout from "../components/Layout";
 import SearchEngineOptimization from "../components/SEO";
