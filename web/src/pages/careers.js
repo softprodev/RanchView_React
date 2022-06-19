@@ -2,15 +2,36 @@ import React from "react";
 import { graphql } from "gatsby";
 
 import Layout from "../components/Layout";
+import PortableText from "../components/Blog/portableText";
+import styled from "@emotion/styled";
+import tw from "twin.macro";
+
 import SearchEngineOptimization from "../components/SEO";
-import BlogPostList from "../components/Blog/BlogPostList";
 import GraphQLErrorList from "../components/Blog/graphql-error-list";
-import {
-  filterOutDocsPublishedInTheFuture,
-  filterOutDocsWithoutSlugs,
-  mapEdgesToNodes,
-} from "../lib/helpers";
+
 import CallToAction from "../components/Repeating/CTA";
+
+
+const StyledContent = styled.div`
+  p,
+  span,
+  li {
+    ${tw`md:text-xl`}
+  }
+  ul {
+    ${tw`list-disc pl-7 mb-6 flex flex-col space-y-0.5`}
+  }
+  ol {
+    ${tw`list-decimal pl-7 mb-6 flex flex-col space-y-0.5`}
+  }
+  strong {
+    ${tw`font-bold`}
+  }
+  em {
+    ${tw`italic`}
+  }
+`;
+
 
 const Page = (props) => {
   const { data, errors } = props;
@@ -23,12 +44,6 @@ const Page = (props) => {
     );
   }
 
-  const postNodes =
-    data &&
-    data.posts &&
-    mapEdgesToNodes(data.posts)
-      .filter(filterOutDocsWithoutSlugs)
-      .filter(filterOutDocsPublishedInTheFuture);
 
   return (
     <Layout siteSettings={data.siteSettings} contactInfo={data.contactInfo}>
@@ -42,13 +57,22 @@ const Page = (props) => {
       <section className="pt-10 pb-20 md:pt-16 md:pb-24">
         <div className="container">
           <header className="mb-12 md:mb-18">
-            <h1 className="mb-0">Real Talk With Ranchview</h1>
+            <h1 className="mb-0">{data.sanityCareer.title}</h1>
           </header>
-          <div className="grid gap-y-12 md:grid-cols-3 md:gap-x-8">
+          <p className="mb-0">{data.sanityCareer.description}</p>
+
+          <header className="my-12 md:my-18">
+            <h2 className="mb-0">{data.sanityCareer.position}</h2>
+          </header>
+          {/* <p className="mb-0">{data.sanityCareer.detail}</p> */}
+          <StyledContent>
+              {data.sanityCareer._rawDetail && <PortableText blocks={data.sanityCareer._rawDetail} />}
+          </StyledContent>
+          {/* <div className="grid gap-y-12 md:grid-cols-3 md:gap-x-8">
             {postNodes && postNodes.length > 0 && (
               <BlogPostList nodes={postNodes} />
             )}
-          </div>
+          </div> */}
         </div>
       </section>
 
@@ -59,6 +83,12 @@ const Page = (props) => {
 
 export const query = graphql`
   {
+    sanityCareer {
+      title
+      description
+      position
+      _rawDetail
+    }
 
     contactInfo : sanityContactinfo {
       title

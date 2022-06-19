@@ -21,7 +21,7 @@ export default {
       {
          title: "Detail",
          name: "detail",
-         type: "text",
+         type: "bodyPortableText",
       },
    ],
 };

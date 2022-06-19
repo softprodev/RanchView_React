@@ -31,7 +31,8 @@ const Page = (props) => {
       />
 
       <FaqSection  sectionTitle="FAQs"
-         sectionDesc="Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis, lectus magna fringilla urna, porttitor"
+         sectionDesc="The decision to transition to assisted living is a big one and you’ll have questions. Here are some that we’re frequently asked by new families.
+         "
       />
       
       <section className="pb-20 md:pb-24">

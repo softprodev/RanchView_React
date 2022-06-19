@@ -13,7 +13,7 @@ export default {
                },
                {
                   title: "Frontend",
-                  value: "https://coach-joe.netlify.app",
+                  value: "https://ranchview.netlify.app/",
                   category: "apps",
                },
             ],
