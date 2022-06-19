@@ -274,7 +274,7 @@ const Footer = ({ hideFooter,contactInfo,siteSettings }) => {
                       // target="_blank"
                       // rel="noopener noreferrer"
                     >
-                      {" "}
+                      
                       Powered by{" "}
                       <img src={nest} alt="NEST logo" className="ml-1" />
                     </a>
