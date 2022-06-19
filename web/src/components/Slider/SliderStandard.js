@@ -96,7 +96,7 @@ const Slider = ({ slides }) => {
                   <div>
                     {testimonial.platform === "Google" && (
                       <StaticImage
-                        src="../../images/Reviews/Google.png"
+                        src="../../images/reviews/Google.png"
                         loading="lazy"
                         width={62}
                       />
@@ -104,7 +104,7 @@ const Slider = ({ slides }) => {
 
                     {testimonial.platform === "Yelp" && (
                       <StaticImage
-                        src="../../images/Reviews/Yelp.png"
+                        src="../../images/reviews/Yelp.png"
                         loading="lazy"
                         width={61}
                       />
@@ -112,7 +112,7 @@ const Slider = ({ slides }) => {
 
                     {testimonial.platform === "Facebook" && (
                       <StaticImage
-                        src="../../images/Reviews/facebook.png"
+                        src="../../images/reviews/facebook.png"
                         loading="lazy"
                         width={99}
                       />

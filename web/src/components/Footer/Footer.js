@@ -6,6 +6,40 @@ import ModalContact from "../Modal/ModalContact";
 import nest from "../../images/Global/Footer/Nest Logo.svg";
 
 
+export const query = graphql`
+  {
+    contactInfo : sanityContactinfo {
+      title
+      description
+      phonenumber
+      email
+      address
+      license
+      bookingurl
+      titleofquestionnaire
+      questions
+    }
+    siteSettings : sanitySiteSettings {
+      title
+      description
+      author
+      headerlogo {
+        asset {
+          gatsbyImageData
+        }
+      }
+      footerlogo {
+        asset {
+          gatsbyImageData
+        }
+      }
+      facebookurl
+      twitterurl
+      privacypolicy
+    }
+
+  }
+  `;
 
 const Footer = ({ hideFooter,contactInfo,siteSettings }) => {
   const getYear = () => {
@@ -163,32 +197,34 @@ const Footer = ({ hideFooter,contactInfo,siteSettings }) => {
                                   </Link>
                                 </li>
                               ))} */}
+
+
                               <li key={`companyItem0`}>
                                   <Link class="text-white" 
                                     to="" style={{ textDecoration: 'none' }}
                                   >
-                                    {contactInfo.address}
+                                    {data.sanityContactinfo.address}
                                   </Link>
                                 </li>
                                 <li key={`companyItem1`}>
                                   <Link class="text-white" 
                                     to="" style={{ textDecoration: 'none' }}
                                   >
-                                    {contactInfo.phonenumber}
+                                    {data.sanityContactinfo.phonenumber}
                                   </Link>
                                 </li>
                                 <li key={`companyItem2`}>
                                   <Link class="text-white" 
                                     to="" style={{ textDecoration: 'none' }}
                                   >
-                                    {contactInfo.email}
+                                    {data.sanityContactinfo.email}
                                   </Link>
                                 </li>
                                 <li key={`companyItem3`}>
                                   <Link class="text-white" 
                                     to="" style={{ textDecoration: 'none' }}
                                   >
-                                    {contactInfo.license}
+                                    {data.sanityContactinfo.license}
                                   </Link>
                                 </li>
                             </ul>
