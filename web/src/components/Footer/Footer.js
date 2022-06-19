@@ -6,13 +6,6 @@ import ModalContact from "../Modal/ModalContact";
 import nest from "../../images/Global/Footer/Nest Logo.svg";
 
 
-import {
-  footerMenuItems,
-  socialMenuItems,
-  serviceMenuItems,
-  companyMenuItems,
-  contactMenuItems
-} from "../constants/menu-items"
 
 const Footer = ({ hideFooter,contactInfo,siteSettings }) => {
   const getYear = () => {
