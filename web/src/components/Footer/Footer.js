@@ -1,4 +1,5 @@
 import React from "react";
+import { graphql } from "gatsby";
 import Link from "gatsby-plugin-transition-link";
 import { StaticImage } from "gatsby-plugin-image";
 
