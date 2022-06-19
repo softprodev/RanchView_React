@@ -1,6 +1,4 @@
-import React, { Component } from "react";
-import { GatsbyImage } from "gatsby-plugin-image";
-import Slick from "react-slick";
+import React from "react";
 import styled from "@emotion/styled";
 import tw from "twin.macro";
 
@@ -9,7 +7,6 @@ import Link from "gatsby-plugin-transition-link";
 
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import ButtonGhost from "../Button/ButtonGhost";
 
 const StyledSlider = styled.div`
   .slider-nav {
@@ -49,7 +46,7 @@ const SliderDetailServices = ({ slides, sectionNumber }) => {
                 return (
                   <div className="py-2" key={i}>
 
-                    {i == sectionNumber ?
+                    {i === sectionNumber ?
                     <>
                       <Link
                         to={slide.link}

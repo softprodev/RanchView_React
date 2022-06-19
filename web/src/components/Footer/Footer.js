@@ -1,5 +1,5 @@
 import React from "react";
-import { graphql } from "gatsby";
+// import { graphql } from "gatsby";
 import Link from "gatsby-plugin-transition-link";
 import { StaticImage } from "gatsby-plugin-image";
 
@@ -7,42 +7,44 @@ import ModalContact from "../Modal/ModalContact";
 import nest from "../../images/Global/Footer/Nest Logo.svg";
 
 
-export const query = graphql`
-  {
-    contactInfo : sanityContactinfo {
-      title
-      description
-      phonenumber
-      email
-      address
-      license
-      bookingurl
-      titleofquestionnaire
-      questions
-    }
-    siteSettings : sanitySiteSettings {
-      title
-      description
-      author
-      headerlogo {
-        asset {
-          gatsbyImageData
-        }
-      }
-      footerlogo {
-        asset {
-          gatsbyImageData
-        }
-      }
-      facebookurl
-      twitterurl
-      privacypolicy
-    }
+// export const query = graphql`
+//   {
+//     contactInfo : sanityContactinfo {
+//       title
+//       description
+//       phonenumber
+//       email
+//       address
+//       license
+//       bookingurl
+//       titleofquestionnaire
+//       questions
+//     }
+//     siteSettings : sanitySiteSettings {
+//       title
+//       description
+//       author
+//       headerlogo {
+//         asset {
+//           gatsbyImageData
+//         }
+//       }
+//       footerlogo {
+//         asset {
+//           gatsbyImageData
+//         }
+//       }
+//       facebookurl
+//       twitterurl
+//       privacypolicy
+//     }
 
-  }
-  `;
+//   }
+//   `;
 
 const Footer = ({ hideFooter,contactInfo,siteSettings }) => {
+
+  // const { data, errors } = props;
   const getYear = () => {
     return new Date().getFullYear();
   };
@@ -51,79 +53,79 @@ const Footer = ({ hideFooter,contactInfo,siteSettings }) => {
   const serviceMenuItems = [
     {
       name: "Assisted Living",
-      href: "/assistedliving",
+      path: "/assistedliving",
     },
     {
       name: "Alzheimer’s Care",
-      href: "/alzheimerscare",
+      path: "/alzheimerscare",
     },
     {
       name: "Dementia Care",
-      href: "/dementiacare",
+      path: "/dementiacare",
     },
     {
       name: "Respite Care",
-      href: "/respitecare",
+      path: "/respitecare",
     },
     {
       name: "Hospice Care",
-      href: "/hospicecare",
+      path: "/hospicecare",
     },
     {
       name: "Enriching Experiences",
-      href: "/enrichingexperiences",
+      path: "/enrichingexperiences",
     },
   ];
 
   const companyMenuItems = [
     {
       name: "About Us",
-      href: "/about",
+      path: "/about",
     },
     {
       name: "Reviews",
-      href: "/reviews",
+      path: "/reviews",
     },
     {
       name: "Amenities",
-      href: "/amenities",
+      path: "/amenities",
     },
     {
       name: "Neighborhood",
-      href: "/neighborhood",
+      path: "/neighborhood",
     },
     {
       name: "FAQs",
-      href: "/faqs",
+      path: "/faqs",
     },
     {
       name: "Blog",
-      href: "/blog",
+      path: "/blog",
     },
     {
       name: "Careers",
-      href: "/careers",
+      path: "/careers",
     },
   ];
 
-  const contactMenuItems = [
-    {
-      name: "350 Cole Ranch Road Encinitas, CA 92024",
-      href: "",
-    },
-    {
-      name: "(760) 753-5082",
-      href: "",
-    },
-    {
-      name: "email@emailaddress.com",
-      href: "",
-    },
-    {
-      name: "CA License #: 374603660",
-      href: "",
-    },
-  ];
+  // const contactMenuItems = [
+  //   {
+  //     name: "350 Cole Ranch Road Encinitas, CA 92024",
+  //     path: "",
+  //   },
+  //   {
+  //     name: "(760) 753-5082",
+  //     path: "",
+  //   },
+  //   {
+  //     name: "email@emailaddress.com",
+  //     path: "",
+  //   },
+  //   {
+  //     name: "CA License #: 374603660",
+  //     path: "",
+  //   },
+  // ];
 
 
   return (
@@ -156,7 +158,7 @@ const Footer = ({ hideFooter,contactInfo,siteSettings }) => {
                               .map((item, index) => (
                                 <li key={`serviceItem${index}`}>
                                   <Link class="text-white"
-                                    to={item.href} style={{ textDecoration: 'none' }}
+                                    to={item.path} style={{ textDecoration: 'none' }}
                                   >
                                     {item.name}
                                   </Link>
@@ -173,7 +175,7 @@ const Footer = ({ hideFooter,contactInfo,siteSettings }) => {
                               .map((item, index) => (
                                 <li key={`companyItem${index}`}>
                                   <Link class="text-white"
-                                    to={item.href} style={{ textDecoration: 'none' }}
+                                    to={item.path} style={{ textDecoration: 'none' }}
                                   >
                                     {item.name}
                                   </Link>
@@ -192,7 +194,7 @@ const Footer = ({ hideFooter,contactInfo,siteSettings }) => {
                               .map((item, index) => (
                                 <li key={`companyItem${index}`}>
                                   <Link class="text-white" 
-                                    to={item.href} style={{ textDecoration: 'none' }}
+                                    to={item.path} style={{ textDecoration: 'none' }}
                                   >
                                     {item.name}
                                   </Link>
@@ -204,28 +206,28 @@ const Footer = ({ hideFooter,contactInfo,siteSettings }) => {
                                   <Link class="text-white" 
                                     to="" style={{ textDecoration: 'none' }}
                                   >
-                                    {data.sanityContactinfo.address}
+                                    {contactInfo.address}
                                   </Link>
                                 </li>
                                 <li key={`companyItem1`}>
                                   <Link class="text-white" 
                                     to="" style={{ textDecoration: 'none' }}
                                   >
-                                    {data.sanityContactinfo.phonenumber}
+                                    {contactInfo.phonenumber}
                                   </Link>
                                 </li>
                                 <li key={`companyItem2`}>
                                   <Link class="text-white" 
                                     to="" style={{ textDecoration: 'none' }}
                                   >
-                                    {data.sanityContactinfo.email}
+                                    {contactInfo.email}
                                   </Link>
                                 </li>
                                 <li key={`companyItem3`}>
                                   <Link class="text-white" 
                                     to="" style={{ textDecoration: 'none' }}
                                   >
-                                    {data.sanityContactinfo.license}
+                                    {contactInfo.license}
                                   </Link>
                                 </li>
                             </ul>

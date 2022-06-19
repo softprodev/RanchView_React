@@ -1,5 +1,5 @@
 // import BlogPostPreview from "./BlogPostPreview";
-import FaqPreview from "./FaqPreview";
+// import FaqPreview from "./FaqPreview";
 // import Link from 'gatsby-plugin-transition-link';
 
 import Banner from "./Banner";

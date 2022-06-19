@@ -1,15 +1,9 @@
 import React from "react";
 
-import { StaticImage } from "gatsby-plugin-image";
-
-import ButtonSolid from "../../components/Button/ButtonSolid";
-
-import heroImage from "../../images/5.0 Amenities/1.0 Amenities-Hero.jpg";
 import ButtonContactSolid from "../../components/Button/ButtonContactSolid";
 
 
 const NeighborhoodSection2 = ({ headingLevel, className, sectionTitle, sectionDesc}) => {
-  const HeadingTag = headingLevel || "h2";
 
   return (
     <>

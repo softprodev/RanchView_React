@@ -5,11 +5,7 @@ import Layout from "../components/Layout";
 import SearchEngineOptimization from "../components/SEO";
 import FaqsList from "../components/Faqs/FaqsList";
 import GraphQLErrorList from "../components/Blog/graphql-error-list";
-import {
-  filterOutDocsPublishedInTheFuture,
-  filterOutDocsWithoutSlugs,
-  mapEdgesToNodes,
-} from "../lib/helpers";
+
 import CallToAction from "../components/Repeating/CTA";
 import FaqSection from "../components/Faqs/FaqSection";
 
@@ -24,17 +20,6 @@ const Page = (props) => {
     );
   }
 
-  const postNodes =
-    data &&
-    data.posts &&
-    mapEdgesToNodes(data.posts)
-      .filter(filterOutDocsWithoutSlugs)
-      .filter(filterOutDocsPublishedInTheFuture);
-
-  const faqlist =
-    data &&
-    data.faqsList &&
-    mapEdgesToNodes(data.faqsList);
   
   return (
     <Layout siteSettings={data.siteSettings} contactInfo={data.contactInfo}>

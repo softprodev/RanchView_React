@@ -6,7 +6,6 @@ import ButtonContactSolid from "../../components/Button/ButtonContactSolid";
 
 
 const ReviewSection = ({ headingLevel, className, sectionTitle, sectionDesc}) => {
-  const HeadingTag = headingLevel || "h2";
 
   return (
     <>

@@ -12,7 +12,7 @@ const About = ({ headingLevel, className, hide }) => {
           <HeadingTag>The RanchView Lifestyle</HeadingTag>
         </header>
         <div className="grid gap-y-10 md:grid-cols-3 md:gap-x-6 lg:gap-x-10">
-          {hide != 1 && (
+          {hide !== 1 && (
             <Link
               to="/about"
               className="group block font-normal text-typography-body no-underline hover:text-typography-body"
@@ -35,7 +35,7 @@ const About = ({ headingLevel, className, hide }) => {
             </Link>
           )}
 
-          {hide != 2 && (
+          {hide !== 2 && (
             <Link
               to="/amenities"
               className="group block font-normal text-typography-body no-underline hover:text-typography-body"
@@ -59,7 +59,7 @@ const About = ({ headingLevel, className, hide }) => {
             </Link>
           )}
 
-          {hide != 3 && (
+          {hide !== 3 && (
             <Link
               to="/neighborhood"
               className="group block font-normal text-typography-body no-underline hover:text-typography-body"
@@ -82,7 +82,7 @@ const About = ({ headingLevel, className, hide }) => {
             </Link>
           )}
 
-          {hide != 4 && (
+          {hide !== 4 && (
             <Link
               to=""
               className="group block font-normal text-typography-body no-underline hover:text-typography-body"

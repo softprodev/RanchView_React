@@ -1,8 +1,6 @@
 import React from "react";
 import MicroModal from "micromodal";
 import styled from "@emotion/styled";
-import tw from "twin.macro";
-import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
 
 import Contact from "../Form/Contact";
@@ -32,28 +30,6 @@ const StyledModal = styled.div`
   }
 `;
 
-const StyledTabs = styled.div`
-  .react-tabs__tab-list {
-    ${tw`grid grid-cols-2 mb-8 border-b! border-gray-100`}
-  }
-  .react-tabs__tab {
-    ${tw`relative text-sm text-typography-heading/40 bg-transparent font-medium pb-4 px-4 rounded-none flex items-center justify-center w-full border-none bottom-0 transition-colors duration-300 ease-linear after:bg-transparent!`}
-  }
-  .react-tabs__tab--selected {
-    ${tw`text-typography-heading after:w-full! after:bg-primary-500! after:h-0.5! after:absolute after:bottom-0! after:left-0! after:right-0!`}
-    svg {
-      path {
-        ${tw`text-typography-heading`}
-      }
-    }
-  }
-  .react-tabs__tab-panel {
-    ${tw`md:hidden`}
-  }
-  .react-tabs__tab-panel--selected {
-    ${tw`md:block`}
-  }
-`;
 
 const ContactModal = ({contactInfo}) => {
   if (typeof window !== "undefined") {

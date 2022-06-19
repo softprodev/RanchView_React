@@ -4,11 +4,7 @@ import { StaticImage } from "gatsby-plugin-image";
 
 import ButtonContactSolid from "../../components/Button/ButtonContactSolid";
 
-import heroImage from "../../images/5.0 Amenities/1.0 Amenities-Hero.jpg";
-
-
 const AboutUsSection4 = ({ headingLevel, className, sectionTitle, sectionDesc}) => {
-  const HeadingTag = headingLevel || "h2";
 
   return (
     <>

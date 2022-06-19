@@ -4,11 +4,7 @@ import { graphql } from "gatsby";
 import Layout from "../components/Layout";
 import SearchEngineOptimization from "../components/SEO";
 import GraphQLErrorList from "../components/Blog/graphql-error-list";
-import {
-  filterOutDocsPublishedInTheFuture,
-  filterOutDocsWithoutSlugs,
-  mapEdgesToNodes,
-} from "../lib/helpers";
+
 import CallToAction from "../components/Repeating/CTA";
 import ServiceSection1 from "../components/Service/ServiceSection1";
 import ServiceSection2 from "../components/Service/ServiceSection2";
@@ -28,12 +24,6 @@ const AssistedLivingPage = (props) => {
     );
   }
 
-  const postNodes =
-    data &&
-    data.posts &&
-    mapEdgesToNodes(data.posts)
-      .filter(filterOutDocsWithoutSlugs)
-      .filter(filterOutDocsPublishedInTheFuture);
 
   return (
     <Layout siteSettings={data.siteSettings} contactInfo={data.contactInfo}>

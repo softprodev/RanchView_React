@@ -1,7 +1,5 @@
 import React from "react";
-import Slick from "react-slick";
-import styled from "@emotion/styled";
-import tw from "twin.macro";
+
 
 
 import SliderDetailServices from "../../components/Slider/SliderDetailServices";
@@ -54,7 +52,6 @@ const ServiceSection2 = ({ headingLevel, className,
   title3, description3,
   sectionNumber
   }) => {
-  const HeadingTag = headingLevel || "h2";
 
 
   return (

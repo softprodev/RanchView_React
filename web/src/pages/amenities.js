@@ -3,13 +3,8 @@ import { graphql } from "gatsby";
 
 import Layout from "../components/Layout";
 import SearchEngineOptimization from "../components/SEO";
-import BlogPostList from "../components/Blog/BlogPostList";
 import GraphQLErrorList from "../components/Blog/graphql-error-list";
-import {
-  filterOutDocsPublishedInTheFuture,
-  filterOutDocsWithoutSlugs,
-  mapEdgesToNodes,
-} from "../lib/helpers";
+
 
 import CallToAction from "../components/Repeating/CTA";
 import RanchViewLifestyle from "../components/Repeating/RanchViewLifestyle";
@@ -29,14 +24,6 @@ const Page = (props) => {
       </Layout>
     );
   }
-
-  const postNodes =
-    data &&
-    data.posts &&
-    mapEdgesToNodes(data.posts)
-      .filter(filterOutDocsWithoutSlugs)
-      .filter(filterOutDocsPublishedInTheFuture);
-
   return (
     <Layout siteSettings={data.siteSettings} contactInfo={data.contactInfo}>
       <SearchEngineOptimization

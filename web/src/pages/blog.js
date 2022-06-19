@@ -6,8 +6,8 @@ import SearchEngineOptimization from "../components/SEO";
 import BlogPostList from "../components/Blog/BlogPostList";
 import GraphQLErrorList from "../components/Blog/graphql-error-list";
 import {
-  filterOutDocsPublishedInTheFuture,
-  filterOutDocsWithoutSlugs,
+  // filterOutDocsPublishedInTheFuture,
+  // filterOutDocsWithoutSlugs,
   mapEdgesToNodes,
 } from "../lib/helpers";
 import CallToAction from "../components/Repeating/CTA";

@@ -1,6 +1,6 @@
 import React from "react";
 
-import { StaticImage, GatsbyImage } from "gatsby-plugin-image";
+import { GatsbyImage } from "gatsby-plugin-image";
 
 import ButtonContactSolid from "../../components/Button/ButtonContactSolid";
 

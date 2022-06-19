@@ -4,11 +4,9 @@ import { StaticImage } from "gatsby-plugin-image";
 
 import ButtonSolid from "../../components/Button/ButtonSolid";
 
-import heroImage from "../../images/5.0 Amenities/1.0 Amenities-Hero.jpg";
 
 
 const NeighborhoodSection1 = ({ headingLevel, className, sectionTitle, sectionDesc}) => {
-  const HeadingTag = headingLevel || "h2";
 
   return (
     <>
@@ -52,7 +50,7 @@ const NeighborhoodSection1 = ({ headingLevel, className, sectionTitle, sectionDe
             </p>
             <ButtonSolid modal="modal-contact" altStyle={2} text="Contact Us" />
           </div>
-          <div>
+          {/* <div>
             <StaticImage
               // src="../images/1.0 Homepage/2.0 intro.jpg"
               src="../images/1.0 Homepage/Hero Joe.png"
@@ -60,7 +58,7 @@ const NeighborhoodSection1 = ({ headingLevel, className, sectionTitle, sectionDe
               loading="eager"
               placeholder="none"
             />
-          </div>
+          </div> */}
         </div>
       </section>
     </>

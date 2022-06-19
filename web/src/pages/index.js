@@ -68,7 +68,7 @@ const IndexPage = ({ data }) => {
             </p>
             <ButtonSolid modal="modal-contact" altStyle={2} text="Contact Us" />
           </div>
-          <div>
+          {/* <div>
             <StaticImage
               // src="../images/1.0 Homepage/2.0 intro.jpg"
               src="../images/1.0 Homepage/Hero Joe.png"
@@ -76,7 +76,7 @@ const IndexPage = ({ data }) => {
               loading="eager"
               placeholder="none"
             />
-          </div>
+          </div> */}
         </div>
       {/* </section> */}
       </div>

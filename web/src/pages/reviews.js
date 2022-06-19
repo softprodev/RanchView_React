@@ -6,7 +6,6 @@ import tw from "twin.macro";
 
 import Layout from "../components/Layout";
 import SearchEngineOptimization from "../components/SEO";
-import ButtonSolid from "../components/Button/ButtonSolid";
 import ReviewCards from "../components/Reviews/ReviewCards";
 import CallToAction from "../components/Repeating/CTA";
 import ReviewSection from "../components/Reviews/ReviewSection";

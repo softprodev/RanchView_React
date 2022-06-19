@@ -28,7 +28,7 @@ const StyledSlider = styled.div`
 const Slider = ({ slides }) => {
   const slider = useRef();
 
-  const [slideIndex, setSlideIndex] = useState(0);
+  const [slideIndex] = useState(0);
 
   useEffect(() => {
     slider.current.slickGoTo(slideIndex);

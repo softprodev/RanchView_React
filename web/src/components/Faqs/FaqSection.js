@@ -12,7 +12,6 @@ import ButtonContactSolid from "../../components/Button/ButtonContactSolid";
 // `;
 
 const FaqSection = ({ headingLevel, className, sectionTitle, sectionDesc}) => {
-  const HeadingTag = headingLevel || "h2";
 
   return (
     <>
