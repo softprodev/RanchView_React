@@ -6,43 +6,47 @@ import { StaticImage } from "gatsby-plugin-image";
 import ModalContact from "../Modal/ModalContact";
 import nest from "../../images/Global/Footer/Nest Logo.svg";
 
+import { useStaticQuery, graphql } from 'gatsby'
 
-// export const query = graphql`
-//   {
-//     contactInfo : sanityContactinfo {
-//       title
-//       description
-//       phonenumber
-//       email
-//       address
-//       license
-//       bookingurl
-//       titleofquestionnaire
-//       questions
-//     }
-//     siteSettings : sanitySiteSettings {
-//       title
-//       description
-//       author
-//       headerlogo {
-//         asset {
-//           gatsbyImageData
-//         }
-//       }
-//       footerlogo {
-//         asset {
-//           gatsbyImageData
-//         }
-//       }
-//       facebookurl
-//       twitterurl
-//       privacypolicy
-//     }
 
-//   }
-//   `;
 
 const Footer = ({ hideFooter,contactInfo,siteSettings }) => {
+
+
+
+  const data = useStaticQuery(graphql`
+    query {
+      siteSettings : sanitySiteSettings {
+        title
+        description
+        author
+        headerlogo {
+          asset {
+            gatsbyImageData
+          }
+        }
+        footerlogo {
+          asset {
+            gatsbyImageData
+          }
+        }    
+        facebookurl
+        twitterurl
+        privacypolicy
+      }
+      contactInfo : sanityContactinfo {
+        title
+        description
+        phonenumber
+        email
+        address
+        license
+        bookingurl     
+        titleofquestionnaire
+        questions
+      }
+    }
+  `)
 
   // const { data, errors } = props;
   const getYear = () => {
@@ -206,28 +210,28 @@ const Footer = ({ hideFooter,contactInfo,siteSettings }) => {
                                   <Link class="text-white" 
                                     to="" style={{ textDecoration: 'none' }}
                                   >
-                                    {contactInfo.address}
+                                    {data.contactInfo.address}
                                   </Link>
                                 </li>
                                 <li key={`companyItem1`}>
                                   <Link class="text-white" 
                                     to="" style={{ textDecoration: 'none' }}
                                   >
-                                    {contactInfo.phonenumber}
+                                    {data.contactInfo.phonenumber}
                                   </Link>
                                 </li>
                                 <li key={`companyItem2`}>
                                   <Link class="text-white" 
                                     to="" style={{ textDecoration: 'none' }}
                                   >
-                                    {contactInfo.email}
+                                    {data.contactInfo.email}
                                   </Link>
                                 </li>
                                 <li key={`companyItem3`}>
                                   <Link class="text-white" 
                                     to="" style={{ textDecoration: 'none' }}
                                   >
-                                    {contactInfo.license}
+                                    {data.contactInfo.license}
                                   </Link>
                                 </li>
                             </ul>
@@ -266,9 +270,9 @@ const Footer = ({ hideFooter,contactInfo,siteSettings }) => {
                   <div className="text-sm">
                     <a
                       className="group flex items-center justify-center space-x-1 text-sm font-normal text-white/70 no-underline hover:text-white md:justify-start"
-                      href=""
-                      target="_blank"
-                      rel="noopener noreferrer"
+                      // href=""
+                      // target="_blank"
+                      // rel="noopener noreferrer"
                     >
                       {" "}
                       Powered by{" "}
@@ -282,7 +286,8 @@ const Footer = ({ hideFooter,contactInfo,siteSettings }) => {
               <div className="flex items-right justify-center space-x-5">
               {/* <div className="mb-16 flex items-right justify-center space-x-10 md:mb-7"> */}
                   <a
-                    href={siteSettings.facebookUrl}
+                    href={data.siteSettings.facebookUrl}
+                    // href=""
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-white no-underline hover:text-primary-500"
@@ -290,7 +295,8 @@ const Footer = ({ hideFooter,contactInfo,siteSettings }) => {
                     <i className="fab fa-facebook-f text-xl"></i>
                   </a>
                   <a
-                    href={siteSettings.twitterUrl}
+                    href={data.siteSettings.twitterUrl}
+                    // href=""
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-white no-underline hover:text-primary-500"

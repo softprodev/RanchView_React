@@ -3,6 +3,8 @@ import styled from "@emotion/styled";
 import tw from "twin.macro";
 
 import ButtonSolid from "../Button/ButtonSolid";
+import { useStaticQuery, graphql } from 'gatsby'
+
 
 function encode(data) {
   const formData = new FormData();
@@ -24,6 +26,25 @@ const StyledForm = styled.div`
 `;
 
 const Form = ({contactInfo}) => {
+
+  const data = useStaticQuery(graphql`
+    query {      
+      contactInfo : sanityContactinfo {
+        title
+        description
+        phonenumber
+        email
+        address
+        license
+        bookingurl     
+        titleofquestionnaire
+        questions
+      }
+    }
+  `)
+
+
+
   const [state, setState] = useState({});
 
   const handleChange = (e) => {
@@ -127,7 +148,7 @@ const Form = ({contactInfo}) => {
             className="mb-1 block font-body text-sm font-medium text-gray-800"
             htmlFor="what-can-we-help-you-with"
           >
-            {contactInfo.titleofquestionnaire}
+            {data.contactInfo.titleofquestionnaire}
           </label>
           <select
             name="what-can-we-help-you-with"
@@ -135,7 +156,7 @@ const Form = ({contactInfo}) => {
             required={true}
           >
             <option value="">Select one...</option>
-            {contactInfo.questions.map((item, i) => {
+            {data.contactInfo.questions.map((item, i) => {
                   return (
                     <option value={"Option "+i}>{item}</option>
                   );

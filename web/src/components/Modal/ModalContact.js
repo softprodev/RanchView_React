@@ -5,6 +5,9 @@ import "react-tabs/style/react-tabs.css";
 
 import Contact from "../Form/Contact";
 
+import { useStaticQuery, graphql } from 'gatsby'
+
+
 const StyledModal = styled.div`
   .modal {
     &[aria-hidden="false"] {
@@ -43,6 +46,23 @@ const ContactModal = ({contactInfo}) => {
     });
   }
 
+
+  const data = useStaticQuery(graphql`
+    query {      
+      contactInfo : sanityContactinfo {
+        title
+        description
+        phonenumber
+        email
+        address
+        license
+        bookingurl     
+        titleofquestionnaire
+        questions
+      }
+    }
+  `)
+
   return (
     <StyledModal>
       <div
@@ -62,11 +82,11 @@ const ContactModal = ({contactInfo}) => {
           >
             <div className="flex items-center justify-between border-b border-gray-400/20 px-5 pt-12 pb-4 md:py-4">
               <a
-                href={"tel:"+contactInfo.phonenumber}
+                href={"tel:"+data.contactInfo.phonenumber}
                 className="flex items-center font-bold text-primary-500 no-underline hover:text-primary-500"
               >
                 <i className="fas fa-phone mr-1"></i>
-                  {contactInfo.phonenumber}
+                  {data.contactInfo.phonenumber}
               </a>
               <i
                 className="close fal fa-times cursor-pointer text-xl text-black transition-all duration-300 ease-linear hover:text-primary-500"
@@ -76,10 +96,11 @@ const ContactModal = ({contactInfo}) => {
 
             <div className="px-4 pt-8 pb-24 md:px-18">
               <header className="mb-6 md:mb-7">
-                <p className="heading-three">{contactInfo.title}</p>
+                <p className="heading-three">{data.contactInfo.title}</p>
               </header>
-              <p className="heading-six">{contactInfo.description}</p>
+              <p className="heading-six">{data.contactInfo.description}</p>
               <Contact contactInfo={contactInfo}/>
+
               {/* <StyledTabs>
                 <Tabs forceRenderTabPanel={true}>
                   <TabList>
