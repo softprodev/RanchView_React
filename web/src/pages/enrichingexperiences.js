@@ -12,6 +12,7 @@ import Testimonials from "../components/Repeating/Testimonials";
 import WhyUs from "../components/Repeating/WhyUs";
 import RanchViewLifestyle from "../components/Repeating/RanchViewLifestyle";
 import RecentPosts from "../components/Repeating/RecentPosts";
+import ContactDiv from "../components/Repeating/ContactDiv";
 
 const EnrichingExperiencesPage = (props) => {
   const { data, errors } = props;
@@ -39,11 +40,13 @@ const EnrichingExperiencesPage = (props) => {
          contents={data.sanityEnrichingexperiences}
          defaultImageUrl="../../images/2.0 Service Pages/enriching-experiences-hero.jpg"
         />
-      <ServiceSection2 title1={data.sanityEnrichingexperiences.title1} description1={data.sanityEnrichingexperiences.description1}
-          title2={data.sanityEnrichingexperiences.title2} description2={data.sanityEnrichingexperiences.description2}
-          title3={data.sanityEnrichingexperiences.title3} description3={data.sanityEnrichingexperiences.description3}
+      <ServiceSection2 title1={data.sanityEnrichingexperiences.title1} description1={data.sanityEnrichingexperiences._rawDescription1}
+          title2={data.sanityEnrichingexperiences.title2} description2={data.sanityEnrichingexperiences._rawDescription2}
+          title3={data.sanityEnrichingexperiences.title3} description3={data.sanityEnrichingexperiences._rawDescription3}
           sectionNumber={5}
         />
+
+      <ContactDiv phonenumber={data.contactInfo.phonenumber}/>
       <RanchViewLifestyle hide={4} />
       <WhyUs />
       <Testimonials />
@@ -101,11 +104,11 @@ export const query = graphql`
         }
       }
       title1
-      description1
+      _rawDescription1
       title2
-      description2
+      _rawDescription2
       title3
-      description3
+      _rawDescription3
     }
   }
 `;

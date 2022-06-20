@@ -142,7 +142,7 @@ const Footer = ({ hideFooter,contactInfo,siteSettings }) => {
         <div className="container">
           
           <div class="md:flex ...">
-            <div class="md:w-2/5 text-center py-10 ...">
+            <div class="md:w-2/5 text-left py-10 ...">
                 <Link to="/">
                   <StaticImage
                     src="../../images/Global/Logo/logo-white.png"
@@ -156,12 +156,12 @@ const Footer = ({ hideFooter,contactInfo,siteSettings }) => {
                 <div class="sm:flex text-white">
                     {serviceMenuItems && (
                       <div class="w-full pb-5">
-                          <p class="footer-menu-title mb-7 text-2xl text-center sm:text-left">Services</p>
-                          <ul class="footer-menu text-center sm:text-left">
+                          <p class="footer-menu-title mb-7 text-base font-body font-semibold leading-6 text-center sm:text-left">Services</p>
+                          <ul class="footer-menu text-center sm:text-left  space-y-1">
                             {serviceMenuItems
                               .map((item, index) => (
                                 <li key={`serviceItem${index}`}>
-                                  <Link class="text-white"
+                                  <Link class="text-white text-sm font-body font-normal leading-5 "
                                     to={item.path} style={{ textDecoration: 'none' }}
                                   >
                                     {item.name}
@@ -173,12 +173,12 @@ const Footer = ({ hideFooter,contactInfo,siteSettings }) => {
                     )}
                     {companyMenuItems && (
                         <div class="w-full pb-5">
-                          <p class="footer-menu-title  mb-7 text-2xl text-center sm:text-left">Company</p>
-                          <ul className="footer-menu text-center sm:text-left">
+                          <p class="footer-menu-title mb-7 text-base font-body font-semibold leading-6 text-center sm:text-left">Company</p>
+                          <ul className="footer-menu text-center sm:text-left  space-y-1">
                             {companyMenuItems
                               .map((item, index) => (
                                 <li key={`companyItem${index}`}>
-                                  <Link class="text-white"
+                                  <Link class="text-white text-sm font-body font-normal leading-5 "
                                     to={item.path} style={{ textDecoration: 'none' }}
                                   >
                                     {item.name}
@@ -190,45 +190,38 @@ const Footer = ({ hideFooter,contactInfo,siteSettings }) => {
                     )}
 
                     
-                    {/* {contactMenuItems && ( */}
                         <div class="w-full pb-5">
-                          <p class="footer-menu-title mb-7 text-2xl text-center sm:text-left">Contact</p>
-                          <ul className="footer-menu text-center sm:text-left">
-                            {/* {contactMenuItems
-                              .map((item, index) => (
-                                <li key={`companyItem${index}`}>
-                                  <Link class="text-white" 
-                                    to={item.path} style={{ textDecoration: 'none' }}
-                                  >
-                                    {item.name}
-                                  </Link>
-                                </li>
-                              ))} */}
-
+                        <p class="footer-menu-title mb-7 text-base font-body font-semibold leading-6 text-center sm:text-left">Contact</p>
+                          <ul className="footer-menu text-center sm:text-left space-y-3">
+                            
 
                               <li key={`companyItem0`}>
-                                  <Link class="text-white" 
+                                  <Link class="text-white text-sm font-body font-normal leading-5 "
                                     to="" style={{ textDecoration: 'none' }}
                                   >
                                     {data.contactInfo.address}
                                   </Link>
+                                  <Link class="text-white text-sm font-body font-normal leading-5 "
+                                    to="" style={{ textDecoration: 'none' }}
+                                  >
+                                  </Link>
                                 </li>
                                 <li key={`companyItem1`}>
-                                  <Link class="text-white" 
+                                    <Link class="text-white text-sm font-body font-normal leading-5 "
                                     to="" style={{ textDecoration: 'none' }}
                                   >
                                     {data.contactInfo.phonenumber}
                                   </Link>
                                 </li>
                                 <li key={`companyItem2`}>
-                                  <Link class="text-white" 
+                                    <Link class="text-white text-sm font-body font-normal leading-5 "
                                     to="" style={{ textDecoration: 'none' }}
                                   >
                                     {data.contactInfo.email}
                                   </Link>
                                 </li>
                                 <li key={`companyItem3`}>
-                                  <Link class="text-white" 
+                                    <Link class="text-white text-sm font-body font-normal leading-5 "
                                     to="" style={{ textDecoration: 'none' }}
                                   >
                                     {data.contactInfo.license}
@@ -238,11 +231,8 @@ const Footer = ({ hideFooter,contactInfo,siteSettings }) => {
                         </div> 
                     {/* )} */}
                 </div>
-              </div>
-              
-            
-                
             </div>
+          </div>
           
           <div className="container grid sm:inline-block">
             <ul className="flex flex-wrap items-center md:space-x-4 float-left py-5">

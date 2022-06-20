@@ -42,7 +42,7 @@ const Page = (props) => {
       <section className="pt-10 pb-20 md:pt-16 md:pb-24">
         <div className="container">
           <header className="mb-12 md:mb-18">
-            <h1 className="mb-0">The RanchView Blog</h1>
+            <h1 className="mb-0">Caregiver Blog: Living, Learning & Growing</h1>
           </header>
           <div className="grid gap-y-12 md:grid-cols-3 md:gap-x-8">
             {postNodes && postNodes.length > 0 && (

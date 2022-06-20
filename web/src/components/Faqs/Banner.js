@@ -3,6 +3,33 @@ import React, { useState } from "react";
 
 import styled from "styled-components/macro";
 
+
+import PortableText from "../../components/Blog/portableText";
+import tw from "twin.macro";
+import styled1 from "@emotion/styled";
+
+export const StyledContent = styled1.div`
+  p,
+  span,
+  li {
+    ${tw`md:text-xl`}
+  }
+  ul {
+    ${tw`list-disc pl-7 mb-6 flex flex-col space-y-0.5`}
+  }
+  ol {
+    ${tw`list-decimal pl-7 mb-6 flex flex-col space-y-0.5`}
+  }
+  strong {
+    ${tw`font-bold`}
+  }
+  em {
+    ${tw`italic`}
+  }
+`;
+
+
+
 export const MainContainer = styled.div`
 //   border-bottom: 9px solid #070707;
   display: flex;
@@ -23,7 +50,7 @@ export const Entity = styled.div`
   }
 `;
 export const Inner = styled.div`
-  padding: 75px 40px;
+  padding: 5px 40px;
 //   max-width: 800px;
 //   margin: auto;
   flex-direction: column;
@@ -31,14 +58,23 @@ export const Inner = styled.div`
   width : 100%;
 `;
 export const Question = styled.div`
-  font-size: 35px;
+  //styleName: Desktop Headings/H4;
+  font-family: Cormorant;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 34px;
+  letter-spacing: 0em;
+  text-align: left;
+  
+
   justify-content: space-between;
   cursor: pointer;
   margin-bottom: 2px;
   display: flex;
-  font-weight: normal;
+  // font-weight: normal;
+  color: black;
 //   background: #1a1919;
-  padding: 0.75em 1.12em;
+  padding: 1.75em 0.12em;
   align-items: center;
 `;
 export const Text = styled.p`
@@ -97,13 +133,38 @@ Banner.Question = function BannerHeader({ children, ...restProps }) {
   const { open, setOpen } = React.useContext(QuestionContext);
 
   return (
-    <Question onClick={() => setOpen((open) => !open)} {...restProps}>
+    <Question className="text-sm font-heading font-bold" onClick={() => setOpen((open) => !open)} {...restProps}>
       {children}
-      {open ? <h3>^</h3> : <h3>+</h3>}
+      {open ? <i className="fa-solid fa-angle-up"></i> : <i className="fa-solid fa-plus"></i>}
+      {/* {open ? <h3>^</h3> : <h3>+</h3>} */}
     </Question>
   );
 };
-Banner.Text = function BannerText({ children, ...restProps }) {
+Banner.StyledContent = function BannerStyledContent({ children, ...restProps }) {
   const { open } = React.useContext(QuestionContext);
-  return open ? <Text {...restProps}>{children}</Text> : null;
+
+  return ( open ?
+    <StyledContent>
+      {/* {children} */}
+      {children && <PortableText blocks={children} />}
+    </StyledContent>
+    : null
+  );
+};
+// Banner.Text = function BannerText({ blocks  }) {
+Banner.Text = function BannerText({ children,blocks, ...restProps  }) {
+  const { open } = React.useContext(QuestionContext);
+  return open ? 
+    <StyledContent >
+      {/* {children}{blocks} */}
+      aad {children}
+      {/* <div>tests</div> */}
+      {/* <PortableText blocks={{blocks}} /> */}
+      {/* test */}
+      {/* {{blocks} && <PortableText blocks={{blocks}} />} */}
+    </StyledContent>
+    // <Text {...restProps}>
+    //   {children}a{children}
+    // </Text>
+  : null;
 };

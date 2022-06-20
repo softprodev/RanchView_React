@@ -12,6 +12,8 @@ import RecentPosts from "../components/Repeating/RecentPosts";
 import Testimonials from "../components/Repeating/Testimonials";
 import WhyUs from "../components/Repeating/WhyUs";
 import RanchViewLifestyle from "../components/Repeating/RanchViewLifestyle";
+import ContactDiv from "../components/Repeating/ContactDiv";
+
 
 const AssistedLivingPage = (props) => {
   const { data, errors } = props;
@@ -39,16 +41,18 @@ const AssistedLivingPage = (props) => {
          contents={data.sanityAssistedliving}
          defaultImageUrl="../../images/2.0 Service Pages/dimentia-care-hero.jpg"
         />
-      <ServiceSection2 title1={data.sanityAssistedliving.title1} description1={data.sanityAssistedliving.description1}
-          title2={data.sanityAssistedliving.title2} description2={data.sanityAssistedliving.description2}
-          title3={data.sanityAssistedliving.title3} description3={data.sanityAssistedliving.description3}
+      <ServiceSection2 title1={data.sanityAssistedliving.title1} description1={data.sanityAssistedliving._rawDescription1}
+          title2={data.sanityAssistedliving.title2} description2={data.sanityAssistedliving._rawDescription2}
+          title3={data.sanityAssistedliving.title3} description3={data.sanityAssistedliving._rawDescription3}
           sectionNumber={0}
         />
+
+      <ContactDiv phonenumber={data.contactInfo.phonenumber}/>
       <RanchViewLifestyle hide={4} />
       <WhyUs />
       <Testimonials /> 
       <RecentPosts /> 
-      <CallToAction phonenumber={data.contactInfo.phonenumber} />
+      <CallToAction phonenumber={data.contactInfo.phonenumber} description={data.sanityAssistedliving.ctacontent} />
     </Layout>
   );
 };
@@ -101,11 +105,12 @@ export const query = graphql`
         }
       }
       title1
-      description1
+      _rawDescription1
       title2
-      description2
+      _rawDescription2
       title3
-      description3
+      _rawDescription3
+      ctacontent
     }
   }
 `;

@@ -12,6 +12,7 @@ import Testimonials from "../components/Repeating/Testimonials";
 import WhyUs from "../components/Repeating/WhyUs";
 import RanchViewLifestyle from "../components/Repeating/RanchViewLifestyle";
 
+
 const RespitePage = (props) => {
   const { data, errors } = props;
 
@@ -44,15 +45,15 @@ const RespitePage = (props) => {
          contents={data.sanityRespitecare}
          defaultImageUrl="../../images/2.0 Service Pages/respite-care-hero.jpg"
         />
-      <ServiceSection2 title1={data.sanityRespitecare.title1} description1={data.sanityRespitecare.description1}
-          title2={data.sanityRespitecare.title2} description2={data.sanityRespitecare.description2}
-          title3={data.sanityRespitecare.title3} description3={data.sanityRespitecare.description3}
+      <ServiceSection2 title1={data.sanityRespitecare.subtitle1} description1={data.sanityRespitecare._rawSubdescription1}
+          title2={data.sanityRespitecare.subtitle2} description2={data.sanityRespitecare._rawSubdescription2}
+          title3={data.sanityRespitecare.subtitle3} description3={data.sanityRespitecare._rawSubdescription3}
           sectionNumber={4}
         />
       <RanchViewLifestyle hide={4} />
       <WhyUs />
       <Testimonials />
-      <CallToAction phonenumber={data.contactInfo.phonenumber} />
+      <CallToAction phonenumber={data.contactInfo.phonenumber}  description={data.sanityRespitecare.ctacontent} />
     </Layout>
   );
 };
@@ -72,12 +73,13 @@ export const query = graphql`
           gatsbyImageData
         }
       }
-      title1
-      description1
-      title2
-      description2
-      title3
-      description3
+      subtitle1
+      _rawSubdescription1
+      subtitle2
+      _rawSubdescription2
+      subtitle3
+      _rawSubdescription3
+      subctacontent
     }
     contactInfo : sanityContactinfo {
       title

@@ -11,8 +11,8 @@ const ServiceSection1 = ({ headingLevel, className, sectionTitle, sectionDesc, c
     <>
       <section className={`${className || "mb-20 md:mb-32 bg-[#F0F6F7]"}`}>
         <div className="container">
-          <div className="grid items-center gap-y-10 md:grid-cols-2 md:gap-x-10 lg:gap-x-20 py-5">
-            <div>
+          <div className="grid items-center gap-y-10 md:grid-cols-2 md:gap-x-10 -z-10 lg:gap-x-20">
+            <div className="container px-20">
               <h1>
                   {sectionTitle}
               </h1>
@@ -30,7 +30,7 @@ const ServiceSection1 = ({ headingLevel, className, sectionTitle, sectionDesc, c
                 placeholder="none"
               /> */}
                 {contents.bgimage && contents.bgimage.asset ? (
-                    <div className="my-5 overflow-hidden rounded-xl">
+                    <div className="overflow-hidden">
                     <GatsbyImage
                         image={contents.bgimage.asset.gatsbyImageData}
                         loading="lazy"

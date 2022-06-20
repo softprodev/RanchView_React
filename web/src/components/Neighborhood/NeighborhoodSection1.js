@@ -10,7 +10,7 @@ const NeighborhoodSection1 = ({ headingLevel, className, sectionTitle, sectionDe
 
   return (
     <>
-      <section className="relative pt-10 pb-56 md:pt-28">
+      <section className="relative pt-10 pb-56 md:pt-28 md:max-h-[30rem]">
         <div className="absolute bottom-0 left-0 hidden h-full w-full md:block">
           <StaticImage
             src="../../images/3.0 Neighborhood/Neighborhood.jpg"

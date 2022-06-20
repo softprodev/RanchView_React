@@ -45,9 +45,11 @@ const Page = ({ data }) => {
         // twitterOpenGraphImage={data.twitterOpenGraphImage.publicURL}
       />
       <ReviewSection  sectionTitle="Your Words Mean So Much To Us"
-         sectionDesc="Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis, lectus magna fringilla urna, porttitor"
+         sectionDesc="Providing the type of care we’d want our own loved ones to have is near and dear to our hearts
+         and we love hearing how we’ve made a difference in people’s lives. Read some of our top
+         reviews for RanchView."
          />
-      <section className="mb-5 pt-16 md:mb-12 md:pt-20">
+      <section className="mb-5 pt-1 md:mb-12 md:pt-2">
         <div className="container">
           {/* <header className="mx-auto mb-14 text-center md:mb-20 md:max-w-[640px]">
             <h1>Client Testimonials</h1>

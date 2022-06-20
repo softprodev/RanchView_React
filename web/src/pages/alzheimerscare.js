@@ -12,6 +12,9 @@ import Testimonials from "../components/Repeating/Testimonials";
 import WhyUs from "../components/Repeating/WhyUs";
 import RanchViewLifestyle from "../components/Repeating/RanchViewLifestyle";
 import RecentPosts from "../components/Repeating/RecentPosts";
+import ContactDiv from "../components/Repeating/ContactDiv";
+
+
 
 const AlzheimersPage = (props) => {
   const { data, errors } = props;
@@ -39,16 +42,17 @@ const AlzheimersPage = (props) => {
          contents={data.sanityAlzheimerscare}
          defaultImageUrl="../../images/2.0 Service Pages/dimentia-care-hero.jpg"
         />
-      <ServiceSection2 title1={data.sanityAlzheimerscare.title1} description1={data.sanityAlzheimerscare.description1}
-          title2={data.sanityAlzheimerscare.title2} description2={data.sanityAlzheimerscare.description2}
-          title3={data.sanityAlzheimerscare.title3} description3={data.sanityAlzheimerscare.description3}
+      <ServiceSection2 title1={data.sanityAlzheimerscare.title1} description1={data.sanityAlzheimerscare._rawDescription1}
+          title2={data.sanityAlzheimerscare.title2} description2={data.sanityAlzheimerscare._rawDescription2}
+          title3={data.sanityAlzheimerscare.title3} description3={data.sanityAlzheimerscare._rawDescription3}
           sectionNumber={1}
         />
+      <ContactDiv phonenumber={data.contactInfo.phonenumber}/>
       <RanchViewLifestyle hide={4} />
       <WhyUs />
       <Testimonials />
       <RecentPosts />
-      <CallToAction phonenumber={data.contactInfo.phonenumber} />
+      <CallToAction phonenumber={data.contactInfo.phonenumber}  description={data.sanityAlzheimerscare.ctacontent}  />
     </Layout>
   );
 };
@@ -101,11 +105,12 @@ export const query = graphql`
         }
       }
       title1
-      description1
+      _rawDescription1
       title2
-      description2
+      _rawDescription2
       title3
-      description3
+      _rawDescription3
+      ctacontent
     }
   }
 `;

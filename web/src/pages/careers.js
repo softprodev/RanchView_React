@@ -3,14 +3,16 @@ import { graphql } from "gatsby";
 
 import Layout from "../components/Layout";
 import PortableText from "../components/Blog/portableText";
-import styled from "@emotion/styled";
-import tw from "twin.macro";
 
 import SearchEngineOptimization from "../components/SEO";
 import GraphQLErrorList from "../components/Blog/graphql-error-list";
 
 import CallToAction from "../components/Repeating/CTA";
 
+import tw from "twin.macro";
+import styled from "@emotion/styled";
+import CareerSection1 from "../components/Career/CareerSection1";
+import ButtonSolid from "../components/Button/ButtonSolid";
 
 const StyledContent = styled.div`
   p,
@@ -44,6 +46,10 @@ const Page = (props) => {
     );
   }
 
+  // const jobNodes =
+  //   data &&
+  //   data.allSanityJobs &&
+  //   mapEdgesToNodes(data.allSanityJobs);
 
   return (
     <Layout siteSettings={data.siteSettings} contactInfo={data.contactInfo}>
@@ -54,25 +60,38 @@ const Page = (props) => {
         // twitterOpenGraphImage={data.twitterOpenGraphImage.publicURL}
       />
 
-      <section className="pt-10 pb-20 md:pt-16 md:pb-24">
+      <CareerSection1  sectionTitle={data.sanityCareer.title}
+         sectionDesc={data.sanityCareer.description}
+      />
+
+      <section className="pt-5 pb-10 md:pt-8 md:pb-24">
         <div className="container">
-          <header className="mb-12 md:mb-18">
+          {/* <header className="mb-12 md:mb-18">
             <h1 className="mb-0">{data.sanityCareer.title}</h1>
           </header>
-          <p className="mb-0">{data.sanityCareer.description}</p>
+          <p className="mb-0 text-lg">{data.sanityCareer.description}</p>
 
           <header className="my-12 md:my-18">
             <h2 className="mb-0">{data.sanityCareer.position}</h2>
-          </header>
+          </header> */}
           {/* <p className="mb-0">{data.sanityCareer.detail}</p> */}
           <StyledContent>
               {data.sanityCareer._rawDetail && <PortableText blocks={data.sanityCareer._rawDetail} />}
           </StyledContent>
-          {/* <div className="grid gap-y-12 md:grid-cols-3 md:gap-x-8">
-            {postNodes && postNodes.length > 0 && (
-              <BlogPostList nodes={postNodes} />
-            )}
-          </div> */}
+          {/* <div className="grid gap-y-12 md:grid-cols-1 md:gap-x-8"> */}
+            {/* {jobNodes && jobNodes.length > 0 && ( */}
+              {data.allSanityJobs.nodes &&
+                data.allSanityJobs.nodes.map((node) => (
+                  <div className="py-3" key={node._id}>
+                    <h3 className="pt-5">{node.title}</h3>
+                    <StyledContent>
+                        {node._rawDescription && <PortableText blocks={node._rawDescription} />}
+                    </StyledContent>
+                    <ButtonSolid modal="modal-contact" text="Contact" />
+                  </div>
+                ))}
+            {/* )} */}
+          {/* </div> */}
         </div>
       </section>
 
@@ -86,8 +105,14 @@ export const query = graphql`
     sanityCareer {
       title
       description
-      position
-      _rawDetail
+    }
+    allSanityJobs {
+      totalCount
+      nodes {
+        title
+        _rawDescription
+        _id
+      }
     }
 
     contactInfo : sanityContactinfo {

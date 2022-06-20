@@ -93,7 +93,7 @@ const Slider = ({ slides }) => {
 
                   {/* <img src={stars} className="mb-3" /> */}
 
-                  <div>
+                  {/* <div>
                     {testimonial.platform === "Google" && (
                       <StaticImage
                         src="../../images/reviews/Google.png"
@@ -117,7 +117,7 @@ const Slider = ({ slides }) => {
                         width={99}
                       />
                     )}
-                  </div>
+                  </div> */}
                 </blockquote>
               </div>
             );

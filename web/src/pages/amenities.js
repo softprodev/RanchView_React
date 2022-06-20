@@ -12,6 +12,7 @@ import RanchViewLifestyle from "../components/Repeating/RanchViewLifestyle";
 import AmenitiesSection1 from "../components/Amenities/AmenitiesSection1";
 import AmenitiesSection2 from "../components/Amenities/AmenitiesSection2";
 import AmenitiesSection3 from "../components/Amenities/AmenitiesSection3";
+import AmenitiesSection4 from "../components/Amenities/AmenitiesSection4";
 
 
 const Page = (props) => {
@@ -35,10 +36,15 @@ const Page = (props) => {
       <AmenitiesSection1 sectionTitle={data.sanityAmenities.title}
          sectionDesc={data.sanityAmenities.description}
          />
-      <AmenitiesSection2 sectionTitle={data.sanityAmenities.secondsectiontitle}
+      <AmenitiesSection4 title1={data.sanityAmenities.subtitle1} description1={data.sanityAmenities._rawDescription1}
+          title2={data.sanityAmenities.subtitle2} description2={data.sanityAmenities._rawDescription2}
+          title3={data.sanityAmenities.subtitle3} description3={data.sanityAmenities._rawDescription3}
+          
+        />
+      {/* <AmenitiesSection2 sectionTitle={data.sanityAmenities.secondsectiontitle}
          sectionDesc={data.sanityAmenities.secondsectioncontent}
          sectionContentArray={data.sanityAmenities.secondsectioncontentarray}
-         />
+         /> */}
       <AmenitiesSection3 sectionTitle={data.sanityAmenities.thirdsectiontitle}
          sectionDesc={data.sanityAmenities.thirdsectioncontent} 
          />
@@ -90,6 +96,12 @@ export const query = graphql`
       secondsectiontitle
       secondsectioncontent
       secondsectioncontentarray
+      subtitle1
+      subtitle2
+      subtitle3
+      _rawDescription1
+      _rawDescription2
+      _rawDescription3
       backgroundimage {
         asset {
           gatsbyImageData

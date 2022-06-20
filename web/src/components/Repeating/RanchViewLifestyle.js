@@ -28,8 +28,7 @@ const About = ({ headingLevel, className, hide }) => {
               <div className="pt-6">
                 <h3 className="heading-four">About Our Staff</h3>
                 <p className="mb-0">
-                  We’re a highly trained team that is caring, compassionate, and
-                  full of heart.
+                  We’re a skilled team that is caring, compassionate, and dedicated to helping your loved one age in place gracefully and with dignity.
                 </p>
               </div>
             </Link>
@@ -51,9 +50,7 @@ const About = ({ headingLevel, className, hide }) => {
               <div className="pt-6">
                 <h3 className="heading-four">The Amenities</h3>
                 <p className="mb-0">
-                  RanchView has a variety of amenities—from on-site culinary
-                  staff to live music and a spacious patio area for relaxation
-                  and get-togethers.
+                  RanchView has a variety of amenities—from on-site culinary staff to live music and a spacious patio area for relaxation and get-togethers.
                 </p>
               </div>
             </Link>
@@ -75,8 +72,7 @@ const About = ({ headingLevel, className, hide }) => {
               <div className="pt-6">
                 <h3 className="heading-four">The Neighborhood</h3>
                 <p className="mb-0">
-                  We’re located north of San Diego on a sprawling property in an
-                  unincorporated area between Encinitas and Rancho Santa Fe.
+                We’re located north of San Diego on a sprawling property in an unincorporated area between Encinitas and Rancho Santa Fe.
                 </p>
               </div>
             </Link>

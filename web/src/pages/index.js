@@ -86,13 +86,11 @@ const IndexPage = ({ data }) => {
           <div className="grid items-center gap-y-10 md:grid-cols-2 md:gap-x-10 lg:gap-x-20">
             <div>
               <h1>
-                {data.siteSettings.title}Top Alzheimer’s & Dementia Care Serving Encinitas & North
+                Top Alzheimer’s & Dementia Care Serving Encinitas & North
                 County, CA
               </h1>
               <p>
-                RanchView is a memory care facility located in Olivenhain, a
-                small community nestled between the coastal town of Encinitas
-                and the suburb of Rancho Santa Fe.
+              RanchView is a memory care facility located in Olivenhain, a small community nestled between the coastal town of Encinitas and the suburb of Rancho Santa Fe.
               </p>
             </div>
             <div>

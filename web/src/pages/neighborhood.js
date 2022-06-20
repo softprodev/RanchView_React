@@ -30,10 +30,16 @@ const Page = (props) => {
         // openGraphImage={data.openGraphImage.publicURL}
         // twitterOpenGraphImage={data.twitterOpenGraphImage.publicURL}
       />
-      <NeighborhoodSection1 sectionTitle="Our Neighborhood"
-         sectionDesc="Optional Subheading Lorem ipsum dolor sit amet, consectetur."
+      <NeighborhoodSection1 sectionTitle={data.sanityNeighborhood.title}
+         sectionDesc={data.sanityNeighborhood.description}
          />
-      <NeighborhoodSection2 />
+      <NeighborhoodSection2 title1={data.sanityNeighborhood.subtitle1} description1={data.sanityNeighborhood._rawSubdescription1}
+        title2={data.sanityNeighborhood.subtitle2} description2={data.sanityNeighborhood._rawSubdescription2}
+        title3={data.sanityNeighborhood.subtitle3} description3={data.sanityNeighborhood._rawSubdescription3}
+        title4={data.sanityNeighborhood.subtitle4} description4={data.sanityNeighborhood._rawSubdescription4}
+        title5={data.sanityNeighborhood.subtitle5} description5={data.sanityNeighborhood._rawSubdescription5}        
+          
+        />
 
       <RanchViewLifestyle hide={4} />
       <CallToAction phonenumber={data.contactInfo.phonenumber} />
@@ -44,6 +50,30 @@ const Page = (props) => {
 export const query = graphql`
   {
 
+    sanityNeighborhood {
+      title
+      description
+      subtitle1
+      subtitle2
+      subtitle3
+      subtitle4
+      subtitle5
+      _rawSubdescription1
+      _rawSubdescription2
+      _rawSubdescription3
+      _rawSubdescription4
+      _rawSubdescription5
+      neighborhoodbg {
+        asset {
+          gatsbyImageData
+        }
+      }
+      neighborhoodbgmobile {
+        asset {
+          gatsbyImageData
+        }
+      }
+    }
     contactInfo : sanityContactinfo {
       title
       description

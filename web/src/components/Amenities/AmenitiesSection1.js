@@ -9,7 +9,7 @@ const AmenitiesSection1 = ({ headingLevel, className, sectionTitle, sectionDesc}
 
   return (
     <>
-      <section className="relative mb-20 pt-10 pb-56 md:mb-32 md:pt-28">
+      <section className="relative pt-10 md:mb-25 md:pt-28 md:max-h-[30rem]">
         <div className="absolute bottom-0 left-0 hidden h-full w-full md:block">
           <StaticImage
             src="../../images/5.0 Amenities/1.0 Amenities-Hero.jpg"
@@ -32,10 +32,10 @@ const AmenitiesSection1 = ({ headingLevel, className, sectionTitle, sectionDesc}
           />
         </div>
 
-        <div className="container relative">
+        <div className="container relative pb-[50px]">
           <div className="text-center md:max-w-[588px] md:text-left">
             <p className="font-heading text-mobile-6xl font-bold text-white lg:mb-5 lg:text-6xl">
-            {sectionTitle}{" "}
+            {sectionTitle}
               
               {/* {data.allSanityServices.nodes &&
                 data.allSanityServices.nodes.map(node => (
@@ -44,7 +44,7 @@ const AmenitiesSection1 = ({ headingLevel, className, sectionTitle, sectionDesc}
                   </li>
               ))} */}
             </p>
-            <p className="font-light text-white md:mb-4 lg:text-[1.325rem] lg:leading-[1.85rem]">
+            <p className="font-body text-white md:mb-4 lg:text-[1.325rem] lg:leading-[1.85rem]">
                 {sectionDesc}
             </p>
             <ButtonSolid modal="modal-contact" altStyle={2} text="Contact Us" />

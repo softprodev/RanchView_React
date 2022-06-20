@@ -11,7 +11,7 @@ import ButtonContactSolid from "../../components/Button/ButtonContactSolid";
 //   // top: -6rem;
 // `;
 
-const FaqSection = ({ headingLevel, className, sectionTitle, sectionDesc}) => {
+const CareerSection1 = ({ headingLevel, className, sectionTitle, sectionDesc}) => {
 
   return (
     <>
@@ -69,7 +69,7 @@ const FaqSection = ({ headingLevel, className, sectionTitle, sectionDesc}) => {
               <p className="font-body text-base text-white md:mb-4 lg:leading-[1.85rem]">
                   {sectionDesc}
               </p>
-              <ButtonContactSolid modal="modal-contact" altStyle={1} text="Contact Us" />
+              <ButtonContactSolid modal="modal-contact" altStyle={1} text="Apply Now" />
             </header>
         </div>
       </div>
@@ -77,4 +77,4 @@ const FaqSection = ({ headingLevel, className, sectionTitle, sectionDesc}) => {
   );
 };
 
-export default FaqSection;
+export default CareerSection1;

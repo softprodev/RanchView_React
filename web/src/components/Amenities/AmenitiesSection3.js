@@ -20,10 +20,10 @@ const AmenitiesSection3 = ({ headingLevel, className, sectionTitle, sectionDesc 
               />
             </div>
             <div>
-              <h1>
+              <h1 className="font-heading font-bold">
                 {sectionTitle}
               </h1>
-              <p>
+              <p className="font-body text-xl mb-0 font-normal">
                 {sectionDesc}
               </p>
             </div>            

@@ -10,7 +10,16 @@ module.exports = {
         DEFAULT: "1rem",
       },
       screens: {
-        DEFAULT: "77rem",
+        DEFAULT: "95rem",
+      },
+    },
+    containerExtended: {
+      center: true,
+      padding: {
+        DEFAULT: "1rem",
+      },
+      screens: {
+        DEFAULT: "90rem",
       },
     },
     fontFamily: {

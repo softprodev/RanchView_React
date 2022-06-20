@@ -12,6 +12,7 @@ import Testimonials from "../components/Repeating/Testimonials";
 import WhyUs from "../components/Repeating/WhyUs";
 import RanchViewLifestyle from "../components/Repeating/RanchViewLifestyle";
 import RecentPosts from "../components/Repeating/RecentPosts";
+import ContactDiv from "../components/Repeating/ContactDiv";
 
 const HospicePage = (props) => {
   const { data, errors } = props;
@@ -40,16 +41,17 @@ const HospicePage = (props) => {
          contents={data.sanityHospicecare}
          defaultImageUrl="../../images/2.0 Service Pages/hospice-care-hero.jpg"
         />
-      <ServiceSection2 title1={data.sanityHospicecare.title1} description1={data.sanityHospicecare.description1}
-          title2={data.sanityHospicecare.title2} description2={data.sanityHospicecare.description2}
-          title3={data.sanityHospicecare.title3} description3={data.sanityHospicecare.description3}
+      <ServiceSection2 title1={data.sanityHospicecare.subtitle1} description1={data.sanityHospicecare._rawSubdescription1}
+          title2={data.sanityHospicecare.title2} description2={data.sanityHospicecare._rawSubdescription2}
+          title3={data.sanityHospicecare.subtitle3} description3={data.sanityHospicecare._rawSubdescription3}
           sectionNumber={3}
         />
+      <ContactDiv phonenumber={data.contactInfo.phonenumber}/>
       <RanchViewLifestyle hide={4} />
       <WhyUs />
       <Testimonials />
       <RecentPosts />
-      <CallToAction phonenumber={data.contactInfo.phonenumber} />
+      <CallToAction phonenumber={data.contactInfo.phonenumber} description={data.sanityHospicecare.ctacontent} />
     </Layout>
   );
 };
@@ -101,12 +103,13 @@ export const query = graphql`
           gatsbyImageData
         }
       }
-      title1
-      description1
+      subtitle1
+      _rawSubdescription1
       title2
-      description2
-      title3
-      description3
+      _rawSubdescription2
+      subtitle3
+      _rawSubdescription3
+      subctacontent
     }
   }
 `;

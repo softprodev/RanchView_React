@@ -28,6 +28,9 @@ export function filterOutDocsPublishedInTheFuture({ publishedAt }) {
 export function getBlogUrl(slug) {
   return `/${slug.current || slug}/`;
 }
+export function getServiceUrl(slug) {
+  return `/${slug.current || slug}`;
+}
 
 export function toPlainText(blocks) {
   if (!blocks) {

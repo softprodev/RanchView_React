@@ -30,20 +30,16 @@ const Page = (props) => {
         // twitterOpenGraphImage={data.twitterOpenGraphImage.publicURL}
       />
 
-      <FaqSection  sectionTitle="FAQs"
+      <FaqSection  
+        //  sectionTitle={data.allSanityFaqs.totalCount}
+         sectionTitle="FAQs"
          sectionDesc="The decision to transition to assisted living is a big one and you’ll have questions. Here are some that we’re frequently asked by new families.
          "
       />
       
       <section className="pb-20 md:pb-24">
         <div className="container">
-          {/* <header className="mb-12 md:mb-18">
-            <h1 className="mb-0">Frequently Asked Questions</h1>
-          </header> */}
-          {/* <div className="grid gap-y-12 md:grid-cols-1 md:gap-x-8">
-            {postNodes && postNodes.length > 0 && (
-              <FaqsList nodes={postNodes} />
-            )} */}
+          
           <div className="grid gap-y-12 md:grid-cols-1 md:gap-x-8">
               <FaqsList nodes={data.allSanityFaqs.nodes} />
           </div>
@@ -99,17 +95,22 @@ export const query = graphql`
       publicURL
     }
     allSanityFaqs {
-      totalCount
+      totalCount  
       nodes {
-        _id
         question
-        answer
-      }
+        _rawAnswer
+        id
+        answer {
+          children {
+            text
+          }
+        }
+      }         
       edges {
         node {
           question
-          answer
-          _id
+          _rawAnswer
+          id
         }
       }
     }

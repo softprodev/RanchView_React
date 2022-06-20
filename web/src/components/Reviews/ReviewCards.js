@@ -103,7 +103,7 @@ const ReviewCards = () => {
                 </div>
               </div>
 
-              {review.platform === "Google" && (
+              {/* {review.platform === "Google" && (
                 <GatsbyImage
                   image={data.google.childImageSharp.gatsbyImageData}
                   loading="lazy"
@@ -122,7 +122,7 @@ const ReviewCards = () => {
                   image={data.facebook.childImageSharp.gatsbyImageData}
                   loading="lazy"
                 />
-              )}
+              )} */}
             </div>
             <blockquote>
               <q className="mb-0 block font-normal before:hidden">

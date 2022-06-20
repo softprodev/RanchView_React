@@ -7,17 +7,18 @@ const AboutUsSection2 = ({ headingLevel, className, sectionTitle, sectionDesc}) 
 
   return (
     <>
-      <section className="relative bg-[#08353D] min-h-[300px] mb-20">
-        <div className="text-center py-9 pt-[50px] px-30">
+      <section className="relative bg-[#08353D] min-h-[300px] mb-20 md:min-h-[25rem]">
+        <div className="w-full h-full p-[70px]">
             <p className="font-heading text-center text-mobile-6xl font-bold text-white lg:mb-5 lg:text-6xl">
-              {sectionTitle}             
-            </p>
-            <div class="table px-30 ...">
-              <p class="text-center px-30 align-middle table-cell font-light text-center text-white md:mb-4">
-                  {sectionDesc}
-              </p> 
-            </div>  
-        </div>
+                    {sectionTitle}             
+                </p>            
+                <div className="flex justify-center">
+                    <p className="font-body text-center text-xl text-white lg:mb-5 lg:text-xl md:max-w-[40rem]">
+                        {sectionDesc}             
+                    </p>
+                </div>
+            </div>
+       
 
         <div className="absolute top-1 left-0">
             <StaticImage
