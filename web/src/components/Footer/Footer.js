@@ -139,9 +139,9 @@ const Footer = ({ hideFooter,contactInfo,siteSettings }) => {
           hideFooter && "hidden"
         }`}
       >
-        <div className="container">
+        <div className="md:container">
           
-          <div class="md:flex ...">
+          <div class="flex flex-col items-center md:items-start md:flex-row ...">
             <div class="md:w-2/5 text-left py-10 ...">
                 <Link to="/">
                   <StaticImage
@@ -152,16 +152,17 @@ const Footer = ({ hideFooter,contactInfo,siteSettings }) => {
                   />
                 </Link>
             </div>  
-            <div class="md:w-3/5 py-10 ...">
-                <div class="sm:flex text-white">
-                    {serviceMenuItems && (
+            <div class="w-10/12 md:w-3/5 py-10 ...">
+                <div class="flex flex-col md:flex-row text-white">
+                  <div class="flex block md:hidden">
+                     {serviceMenuItems && (
                       <div class="w-full pb-5">
-                          <p class="footer-menu-title mb-7 text-base font-body font-semibold leading-6 text-center sm:text-left">Services</p>
-                          <ul class="footer-menu text-center sm:text-left  space-y-1">
+                          <p class="footer-menu-title mb-7 text-[1rem] font-body font-semibold leading-[1.5rem] text-left">Services</p>
+                          <ul class="footer-menu text-left  space-y-1">
                             {serviceMenuItems
                               .map((item, index) => (
                                 <li key={`serviceItem${index}`}>
-                                  <Link class="text-white text-sm font-body font-normal leading-5 "
+                                  <Link class="text-white font-body font-normal text-[0.875rem] leading-[1.25rem]"
                                     to={item.path} style={{ textDecoration: 'none' }}
                                   >
                                     {item.name}
@@ -173,12 +174,48 @@ const Footer = ({ hideFooter,contactInfo,siteSettings }) => {
                     )}
                     {companyMenuItems && (
                         <div class="w-full pb-5">
-                          <p class="footer-menu-title mb-7 text-base font-body font-semibold leading-6 text-center sm:text-left">Company</p>
-                          <ul className="footer-menu text-center sm:text-left  space-y-1">
+                          <p class="footer-menu-title mb-7 text-[1rem] font-body font-semibold leading-[1.5rem] text-left">Company</p>
+                          <ul className="footer-menu text-left  space-y-1">
                             {companyMenuItems
                               .map((item, index) => (
                                 <li key={`companyItem${index}`}>
-                                  <Link class="text-white text-sm font-body font-normal leading-5 "
+                                  <Link class="text-white font-body font-normal text-[0.875rem] leading-[1.25rem]"
+                                    to={item.path} style={{ textDecoration: 'none' }}
+                                  >
+                                    {item.name}
+                                  </Link>
+                                </li>
+                              ))}
+                            </ul>
+                        </div> 
+                    )}
+                  </div>
+
+                    {serviceMenuItems && (
+                      <div class="w-full pb-5 hidden md:block">
+                          <p class="footer-menu-title mb-7 text-[1rem] font-body font-semibold leading-[1.5rem] text-left">Services</p>
+                          <ul class="footer-menu text-left  space-y-1">
+                            {serviceMenuItems
+                              .map((item, index) => (
+                                <li key={`serviceItem${index}`}>
+                                  <Link class="text-white font-body font-normal text-[0.875rem] leading-[1.25rem]"
+                                    to={item.path} style={{ textDecoration: 'none' }}
+                                  >
+                                    {item.name}
+                                  </Link>
+                                </li>
+                              ))}
+                            </ul>
+                      </div> 
+                    )}
+                    {companyMenuItems && (
+                        <div class="w-full pb-5 hidden md:block">
+                          <p class="footer-menu-title mb-7 text-[1rem] font-body font-semibold leading-[1.5rem] text-left">Company</p>
+                          <ul className="footer-menu text-left  space-y-1">
+                            {companyMenuItems
+                              .map((item, index) => (
+                                <li key={`companyItem${index}`}>
+                                  <Link class="text-white font-body font-normal text-[0.875rem] leading-[1.25rem]"
                                     to={item.path} style={{ textDecoration: 'none' }}
                                   >
                                     {item.name}
@@ -189,47 +226,63 @@ const Footer = ({ hideFooter,contactInfo,siteSettings }) => {
                         </div> 
                     )}
 
-                    
-                        <div class="w-full pb-5">
-                        <p class="footer-menu-title mb-7 text-base font-body font-semibold leading-6 text-center sm:text-left">Contact</p>
-                          <ul className="footer-menu text-center sm:text-left space-y-3">
-                            
+                    <div class="w-1/2 md:w-full pb-5">
+                      <p class="footer-menu-title mb-7 text-[1rem] font-body font-semibold leading-[1.5rem] text-left">Contact</p>
+                        <ul className="footer-menu text-left space-y-3">
+                            <li key={`companyItem0`}>
+                                <Link class="text-white font-body font-normal text-[0.875rem] leading-[1.25rem]"
+                                  to="" style={{ textDecoration: 'none' }}
+                                >
+                                  {data.contactInfo.address}
+                                </Link>
+                                <Link class="text-white font-body font-normal text-[0.875rem] leading-[1.25rem]"
+                                  to="" style={{ textDecoration: 'none' }}
+                                >
+                                </Link>
+                              </li>
+                              <li key={`companyItem1`}>
+                                  <Link class="text-white font-body font-normal text-[0.875rem] leading-[1.25rem]"
+                                  to="" style={{ textDecoration: 'none' }}
+                                >
+                                  {data.contactInfo.phonenumber}
+                                </Link>
+                              </li>
+                              <li key={`companyItem2`}>
+                                  <Link class="text-white font-body font-normal text-[0.875rem] leading-[1.25rem]"
+                                  to="" style={{ textDecoration: 'none' }}
+                                >
+                                  {data.contactInfo.email}
+                                </Link>
+                              </li>
+                              <li key={`companyItem3`}>
+                                  <Link class="text-white font-body font-normal text-[0.875rem] leading-[1.25rem]"
+                                  to="" style={{ textDecoration: 'none' }}
+                                >
+                                  {data.contactInfo.license}
+                                </Link>
+                              </li>
+                          </ul>
+                    </div> 
 
-                              <li key={`companyItem0`}>
-                                  <Link class="text-white text-sm font-body font-normal leading-5 "
-                                    to="" style={{ textDecoration: 'none' }}
-                                  >
-                                    {data.contactInfo.address}
-                                  </Link>
-                                  <Link class="text-white text-sm font-body font-normal leading-5 "
-                                    to="" style={{ textDecoration: 'none' }}
-                                  >
-                                  </Link>
-                                </li>
-                                <li key={`companyItem1`}>
-                                    <Link class="text-white text-sm font-body font-normal leading-5 "
-                                    to="" style={{ textDecoration: 'none' }}
-                                  >
-                                    {data.contactInfo.phonenumber}
-                                  </Link>
-                                </li>
-                                <li key={`companyItem2`}>
-                                    <Link class="text-white text-sm font-body font-normal leading-5 "
-                                    to="" style={{ textDecoration: 'none' }}
-                                  >
-                                    {data.contactInfo.email}
-                                  </Link>
-                                </li>
-                                <li key={`companyItem3`}>
-                                    <Link class="text-white text-sm font-body font-normal leading-5 "
-                                    to="" style={{ textDecoration: 'none' }}
-                                  >
-                                    {data.contactInfo.license}
-                                  </Link>
-                                </li>
-                            </ul>
-                        </div> 
-                    {/* )} */}
+
+                    <div className="flex items-right justify-start space-x-5 block md:hidden">
+                      <a
+                        href={data.siteSettings.facebookUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-white no-underline hover:text-primary-500"
+                      >
+                        <i className="fab fa-facebook-f text-xl"></i>
+                      </a>
+                      <a
+                        href={data.siteSettings.twitterUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-white no-underline hover:text-primary-500"
+                      >
+                        <i className="fab fa-twitter text-xl"></i>
+                      </a>
+                    </div> 
                 </div>
             </div>
           </div>
@@ -248,14 +301,14 @@ const Footer = ({ hideFooter,contactInfo,siteSettings }) => {
                     Privacy Policy
                   </Link>
                 </li>
-                <li>
+                {/* <li>
                   <Link
                     to="/privacy-policy/"
                     className="font-body text-sm font-normal text-white/70 no-underline hover:text-white"
                   >
                     Accesbility Statement
                   </Link>
-                </li>
+                </li> */}
                 <li>
                   <div className="text-sm">
                     <a
@@ -272,7 +325,7 @@ const Footer = ({ hideFooter,contactInfo,siteSettings }) => {
                 </li>                
               </div>
             </ul>
-            <div className="float-right py-5">
+            <div className="float-right py-5 hidden md:block">
               <div className="flex items-right justify-center space-x-5">
               {/* <div className="mb-16 flex items-right justify-center space-x-10 md:mb-7"> */}
                   <a

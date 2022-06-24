@@ -24,34 +24,34 @@ export default {
         type: 'defaultImage'
       }, 
       {
-         title: "Title 1 - Intro/How We Care Heading",
+         title: "Title 1",
          name: "title1",
          type: "string",
       },  
       {
          title: "Description 1",
          name: "description1",
-         type: "text",
+         type: "bodyPortableText",
       }, 
       {
-        title: "Title 2 - What to expect",
+        title: "Title 2",
         name: "title2",
         type: "string",
      },  
      {
         title: "Description 2",
         name: "description2",
-        type: "text",
+        type: "bodyPortableText",
      }, 
      {
-        title: "Title 3 - The Transition / How to Prepare",
+        title: "Title 3",
         name: "title3",
         type: "string",
      },  
      {
         title: "Description 3",
         name: "description3",
-        type: "text",
+        type: "bodyPortableText",
      },
     ],    
  };

@@ -15,13 +15,34 @@ import CareerSection1 from "../components/Career/CareerSection1";
 import ButtonSolid from "../components/Button/ButtonSolid";
 
 const StyledContent = styled.div`
-  p,
+  p{
+    //styleName: Body Medium/Medium-Regular;
+    font-family: Catamaran;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0em;
+    text-align: left;
+
+  },
   span,
   li {
-    ${tw`md:text-xl`}
+    // ${tw`md:text-xl`}
+    font-family: Catamaran;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0em;
+    text-align: left;
   }
   ul {
     ${tw`list-disc pl-7 mb-6 flex flex-col space-y-0.5`}
+    font-family: Catamaran;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0em;
+    text-align: left;
   }
   ol {
     ${tw`list-decimal pl-7 mb-6 flex flex-col space-y-0.5`}
@@ -54,8 +75,8 @@ const Page = (props) => {
   return (
     <Layout siteSettings={data.siteSettings} contactInfo={data.contactInfo}>
       <SearchEngineOptimization
-        title=""
-        description=""
+        title="Career"
+        description="RanchView | Wise Digital Partners"
         // openGraphImage={data.openGraphImage.publicURL}
         // twitterOpenGraphImage={data.twitterOpenGraphImage.publicURL}
       />
@@ -83,8 +104,8 @@ const Page = (props) => {
               {data.allSanityJobs.nodes &&
                 data.allSanityJobs.nodes.map((node) => (
                   <div className="py-3" key={node._id}>
-                    <h3 className="pt-5">{node.title}</h3>
-                    <StyledContent>
+                    <h3 className="font-heading font-bold text-typography-heading text-[1.875rem] leading-[2.25rem]">{node.title}</h3>
+                    <StyledContent className="font-body font-normal text-typography-body text-[1rem] leading-[1.5rem]">
                         {node._rawDescription && <PortableText blocks={node._rawDescription} />}
                     </StyledContent>
                     <ButtonSolid modal="modal-contact" text="Contact" />

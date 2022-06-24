@@ -25,8 +25,8 @@ const Page = (props) => {
   return (
     <Layout siteSettings={data.siteSettings} contactInfo={data.contactInfo}>
       <SearchEngineOptimization
-        title=""
-        description=""
+        title="Neighborhood"
+        description="RanchView | Wise Digital Partners"
         // openGraphImage={data.openGraphImage.publicURL}
         // twitterOpenGraphImage={data.twitterOpenGraphImage.publicURL}
       />

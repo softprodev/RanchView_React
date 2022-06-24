@@ -2,6 +2,7 @@ import React, { useState } from "react";
 // import { Container, Header, Entity, Inner, Question, Text } from "./styles ";
 
 import styled from "styled-components/macro";
+import Link from "gatsby-plugin-transition-link";
 
 
 import PortableText from "../../components/Blog/portableText";
@@ -9,6 +10,41 @@ import tw from "twin.macro";
 import styled1 from "@emotion/styled";
 
 export const StyledContent = styled1.div`
+  p{
+    //styleName: Body Medium/Medium-Regular;
+  font-family: Catamaran;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0em;
+  text-align: left;
+
+  },
+  span,
+  li {
+    //styleName: Body Medium/Medium-Regular;
+font-family: Catamaran;
+font-size: 16px;
+font-weight: 400;
+line-height: 24px;
+letter-spacing: 0em;
+text-align: left;
+
+  }
+  ul {
+    ${tw`list-disc pl-7 mb-6 flex flex-col space-y-0.5`}
+  }
+  ol {
+    ${tw`list-decimal pl-7 mb-6 flex flex-col space-y-0.5`}
+  }
+  strong {
+    ${tw`font-bold`}
+  }
+  em {
+    ${tw`italic`}
+  }
+`;
+export const NavItem = styled1.div`
   p,
   span,
   li {
@@ -44,18 +80,54 @@ export const Entity = styled.div`
   margin-bottom: 10px;
   margin: auto;
   &:first-of-type {
-    margin-top: 1.5em;
+    // margin-top: 1.5em;
     border-top: 1px solid #070707;
+  }
+`;
 
+export const EntityNav = styled.div`
+//   color: #070707;
+  background : transparent;
+  // border-bottom: 1px solid #070707;
+//   max-width: 690px;
+  width: 99%;
+  margin-bottom: 10px;
+  margin: auto;
+  &:first-of-type {
+    // margin-top: 1.5em;
+    // border-top: 1px solid #070707;
   }
 `;
 export const Inner = styled.div`
-  padding: 5px 40px;
+  padding: 0px 40px;
 //   max-width: 800px;
 //   margin: auto;
   flex-direction: column;
   display: flex;
   width : 100%;
+`;
+export const NavMenu = styled.div`
+
+  color: white;
+  justify-content: center;
+  font-size: 34px;
+  line-height: 34px;
+  //styleName: Desktop Headings/H4;
+  font-family: Cormorant;
+  font-weight: 700;
+  // line-height: 34px;
+  // letter-spacing: 0em;
+  // text-align: center;
+
+  // justify-content: space-between;
+  cursor: pointer;
+  // margin-bottom: 2px;
+  display: flex;
+  // font-weight: normal;
+  color: white;
+//   background: #1a1919;
+  // padding: 1.75em 0.12em;
+  // align-items: center;
 `;
 export const Question = styled.div`
   //styleName: Desktop Headings/H4;
@@ -63,8 +135,8 @@ export const Question = styled.div`
   font-size: 24px;
   font-weight: 700;
   line-height: 34px;
-  letter-spacing: 0em;
-  text-align: left;
+  // letter-spacing: 0em;
+  // text-align: left;
   
 
   justify-content: space-between;
@@ -129,14 +201,21 @@ Banner.Entity = function BannerEntity({ children, ...restProps }) {
     </QuestionContext.Provider>
   );
 };
+Banner.EntityNav = function BannerEntityNav({ children, ...restProps }) {
+  const [open, setOpen] = useState(false);
+  return (
+    <QuestionContext.Provider value={{ open, setOpen }}>
+      <EntityNav {...restProps}> {children}</EntityNav>
+    </QuestionContext.Provider>
+  );
+};
 Banner.Question = function BannerHeader({ children, ...restProps }) {
   const { open, setOpen } = React.useContext(QuestionContext);
 
   return (
-    <Question className="text-sm font-heading font-bold" onClick={() => setOpen((open) => !open)} {...restProps}>
+    <Question className="font-heading font-bold text-typography-heading text-[1.125rem] md:text-[1.5rem] leading-[1.5rem] md:leading-[2.125rem]" onClick={() => setOpen((open) => !open)} {...restProps}>
       {children}
       {open ? <i className="fa-solid fa-angle-up"></i> : <i className="fa-solid fa-plus"></i>}
-      {/* {open ? <h3>^</h3> : <h3>+</h3>} */}
     </Question>
   );
 };
@@ -144,9 +223,8 @@ Banner.StyledContent = function BannerStyledContent({ children, ...restProps }) 
   const { open } = React.useContext(QuestionContext);
 
   return ( open ?
-    <StyledContent>
-      {/* {children} */}
-      {children && <PortableText blocks={children} />}
+    <StyledContent className="font-body font-normal text-typography-body text-[1rem] leading-[1.5rem]">
+    {children && <PortableText blocks={children} />}
     </StyledContent>
     : null
   );
@@ -166,5 +244,31 @@ Banner.Text = function BannerText({ children,blocks, ...restProps  }) {
     // <Text {...restProps}>
     //   {children}a{children}
     // </Text>
+  : null;
+};
+
+
+Banner.NavMenu = function BannerHeader({ children, ...restProps }) {
+  const { open, setOpen } = React.useContext(QuestionContext);
+
+  return (
+    <NavMenu className="font-heading text-white font-bold pb-2" onClick={() => setOpen((open) => !open)} {...restProps}>
+      {children}
+    </NavMenu>
+  );
+};
+
+
+Banner.NavItem = function BannerText({ children,name,href, ...restProps  }) {
+  const { open } = React.useContext(QuestionContext);
+  return open ? 
+    <NavItem className="py-2 text-white" >
+      <Link
+        to={href}
+        className="text-xl text-white py-2 font-body font-normal leading-7 no-underline hover:text-white"
+      >
+        {name}
+      </Link>
+    </NavItem>
   : null;
 };

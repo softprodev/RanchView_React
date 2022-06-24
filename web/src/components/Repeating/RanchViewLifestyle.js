@@ -9,7 +9,7 @@ const About = ({ headingLevel, className, hide }) => {
     <section className={` ${className || "mb-20 md:mb-32"}`}>
       <div className="container">
         <header className="mb-12 md:mb-16">
-          <HeadingTag>The RanchView Lifestyle</HeadingTag>
+          <HeadingTag className="font-heading text-typography-heading font-bold text-[2.1875rem] leading-[2.5rem] md:text-[2.5rem] md:leading-[3rem]">The RanchView Lifestyle</HeadingTag>
         </header>
         <div className="grid gap-y-10 md:grid-cols-3 md:gap-x-6 lg:gap-x-10">
           {hide !== 1 && (
@@ -26,8 +26,8 @@ const About = ({ headingLevel, className, hide }) => {
                 />
               </div>
               <div className="pt-6">
-                <h3 className="heading-four">About Our Staff</h3>
-                <p className="mb-0">
+                <h4 className="font-heading text-typography-heading font-bold text-[1.5rem] leading-[2.125rem]">About Our Staff</h4>
+                <p className="font-body text-typography-body font-normal text-[1rem] leading-[1.5rem]">
                   We’re a skilled team that is caring, compassionate, and dedicated to helping your loved one age in place gracefully and with dignity.
                 </p>
               </div>
@@ -48,8 +48,8 @@ const About = ({ headingLevel, className, hide }) => {
                 />
               </div>
               <div className="pt-6">
-                <h3 className="heading-four">The Amenities</h3>
-                <p className="mb-0">
+                <h4 className="font-heading text-typography-heading font-bold text-[1.5rem] leading-[2.125rem]">The Amenities</h4>
+                <p className="font-body text-typography-body font-normal text-[1rem] leading-[1.5rem]">
                   RanchView has a variety of amenities—from on-site culinary staff to live music and a spacious patio area for relaxation and get-togethers.
                 </p>
               </div>
@@ -70,9 +70,9 @@ const About = ({ headingLevel, className, hide }) => {
                 />
               </div>
               <div className="pt-6">
-                <h3 className="heading-four">The Neighborhood</h3>
-                <p className="mb-0">
-                We’re located north of San Diego on a sprawling property in an unincorporated area between Encinitas and Rancho Santa Fe.
+                <h4 className="font-heading text-typography-heading font-bold text-[1.5rem] leading-[2.125rem]">The Neighborhood</h4>
+                <p className="font-body text-typography-body font-normal text-[1rem] leading-[1.5rem]">
+                  We’re located north of San Diego on a sprawling property in an unincorporated area between Encinitas and Rancho Santa Fe.
                 </p>
               </div>
             </Link>
@@ -92,8 +92,8 @@ const About = ({ headingLevel, className, hide }) => {
                 />
               </div>
               <div className="pt-6">
-                <h3 className="heading-four">FAQs</h3>
-                <p className="mb-0">
+              <h4 className="font-heading text-typography-heading font-bold text-[1.5rem] leading-[2.125rem]">FAQs</h4>
+                <p className="font-body text-typography-body font-normal text-[1rem] leading-[1.5rem]">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit ut
                   aliquam, purus sit amet luctus venenatis, lectus magna
                   fringilla urna, porttitor

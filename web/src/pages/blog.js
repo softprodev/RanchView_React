@@ -33,8 +33,8 @@ const Page = (props) => {
   return (
     <Layout siteSettings={data.siteSettings} contactInfo={data.contactInfo}>
       <SearchEngineOptimization
-        title=""
-        description=""
+        title="Blogs"
+        description="RanchView | Wise Digital Partners"
         // openGraphImage={data.openGraphImage.publicURL}
         // twitterOpenGraphImage={data.twitterOpenGraphImage.publicURL}
       />
@@ -42,8 +42,11 @@ const Page = (props) => {
       <section className="pt-10 pb-20 md:pt-16 md:pb-24">
         <div className="container">
           <header className="mb-12 md:mb-18">
-            <h1 className="mb-0">Caregiver Blog: Living, Learning & Growing</h1>
+            <h1 className="mb-0 font-heading text-typography-heading font-bold text-[2.5rem] leading-[2.875rem] md:text-[3rem] md:leading-[3.625rem]">
+            Caregiver Blog: Living, Learning & Growing
+            </h1>
           </header>
+          
           <div className="grid gap-y-12 md:grid-cols-3 md:gap-x-8">
             {postNodes && postNodes.length > 0 && (
               <BlogPostList nodes={postNodes} />

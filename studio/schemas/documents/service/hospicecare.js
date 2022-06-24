@@ -24,35 +24,40 @@ export default {
         type: 'defaultImage'
       }, 
       {
-         title: "Title 1 - Intro/How We Care Heading",
-         name: "title1",
+         title: "Title 1",
+         name: "subtitle1",
          type: "string",
       },  
       {
          title: "Description 1",
-         name: "description1",
-         type: "text",
+         name: "subdescription1",
+         type: "bodyPortableText",
       }, 
       {
-        title: "Title 2 - What to expect",
+        title: "Title 2",
         name: "title2",
         type: "string",
      },  
      {
         title: "Description 2",
-        name: "description2",
-        type: "text",
+        name: "subdescription2",
+        type: "bodyPortableText",
      }, 
      {
-        title: "Title 3 - The Transition / How to Prepare",
-        name: "title3",
+        title: "Title 3",
+        name: "subtitle3",
         type: "string",
      },  
      {
         title: "Description 3",
-        name: "description3",
-        type: "text",
+        name: "subdescription3",
+        type: "bodyPortableText",
      },
+     {
+      title: "CTA Content",
+      name: "subctacontent",
+      type: "text",
+   },
     ],    
  };
  

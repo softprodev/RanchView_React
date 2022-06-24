@@ -100,6 +100,11 @@ export default () =>
             .child(S.documentTypeList("faqs").title("FAQs"))
             .icon(FcFaq),
          S.listItem()
+            .title('Jobs')
+            .schemaType("jobs")
+            .child(S.documentTypeList("jobs").title("Jobs"))
+            .icon(FcBusinessman),
+         S.listItem()
             .title('Career Info')
             .schemaType("career")
             .child(S.documentTypeList("career").title("Career Info"))

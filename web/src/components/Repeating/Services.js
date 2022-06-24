@@ -112,8 +112,8 @@ const Testimonial = ({ className, headingLevel }) => {
     <section className={`pb-20 md:pb-32 ${className}`}>
       <div className="container">
         <header className="mb-10 max-w-3xl md:mb-12">
-          <h2>Greater San Diego Caregivers</h2>
-          <p>
+          <h2 className="font-heading text-typography-heading font-bold text-[2.1875rem] leading-[2.5rem] md:leading-[3rem]">Greater San Diego Caregivers</h2>
+          <p className="font-body font-normal text-typography-body text-[1rem] leading-[1.5rem]">
             At RanchView, residents receive compassionate, individualized care
             focusing on their physical well-being and the social and spiritual
             facets of their lives. Our services include:

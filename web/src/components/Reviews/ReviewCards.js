@@ -97,7 +97,7 @@ const ReviewCards = () => {
                 )}
 
                 <div>
-                  <span className="block font-bold text-primary-900">
+                  <span className="block font-body font-bold text-typography-heading text-[1rem] leading-[1.5rem]">
                     {review.name}
                   </span>
                 </div>
@@ -125,7 +125,7 @@ const ReviewCards = () => {
               )} */}
             </div>
             <blockquote>
-              <q className="mb-0 block font-normal before:hidden">
+              <q className="mb-0 block font-body font-normal text-typography-body text-[1rem] leading-[1.5rem] before:hidden">
                 {review.review}
               </q>
             </blockquote>

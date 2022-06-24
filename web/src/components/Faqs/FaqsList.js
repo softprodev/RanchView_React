@@ -41,7 +41,7 @@ function FaqsList(props) {
         props.nodes.map((node,index) => (
           <Banner.Entity key={index}>
             {/* <Banner.Question>question</Banner.Question> */}
-              <Banner.Question>{node.question}</Banner.Question>
+              <Banner.Question >{node.question}</Banner.Question>
               {/* <StyledContent>
                               {node._rawAnswer && <PortableText blocks={node._rawAnswer} />}
               </StyledContent> */}

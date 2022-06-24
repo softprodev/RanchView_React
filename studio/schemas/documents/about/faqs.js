@@ -11,7 +11,7 @@ export default {
       {
          title: "Answer",
          name: "answer",
-         type: "text",
+         type: "bodyPortableText",
       },
    ],
 };

@@ -20,13 +20,13 @@ const IndexPage = ({ data }) => {
   return (
     <Layout siteSettings={data.siteSettings} contactInfo={data.contactInfo}>
       <SearchEngineOptimization
-        title=""
-        description=""
+        title="Home"
+        description="RanchView | Wise Digital Partners"
         // openGraphImage={data.openGraphImage.publicURL}
         // twitterOpenGraphImage={data.twitterOpenGraphImage.publicURL}
       />
 
-      <div className="relative w-full pt-[31%] pt-10" >
+      <div className="relative w-full pt-[150%] md:pt-[31%] pt-10" >
       {/* <section className="relative mb-20 pt-10 pb-56 md:mb-32 md:pt-28 pt-[52.85%] bg-Black w-full"> */}
         <div className="absolute bottom-0 left-0 hidden h-full w-full md:block">
           <StaticImage
@@ -41,7 +41,8 @@ const IndexPage = ({ data }) => {
 
         <div className="absolute bottom-0 left-0 h-full w-full md:hidden">
           <StaticImage
-            src="../images/1.0 Homepage/1.0 hero-mobile.jpg"
+            // src="../images/1.0 Homepage/home_hero_mobile.png"
+            src="../images/1.0 Homepage/home_hero_mobile.png"
             alt="The good life, continued"
             loading="eager"
             placeholder="none"
@@ -50,9 +51,9 @@ const IndexPage = ({ data }) => {
           />
         </div>
 
-        <div className="container relative top-[-90px] md:top-[-150px] lg:top-[-240px] xl:top-[-300px]">
+        <div className="container relative top-[-520px] md:top-[-150px] lg:top-[-240px] xl:top-[-300px]">
           <div className="text-center md:max-w-[588px] md:text-left">
-            <p className="font-heading text-mobile-7xl font-bold text-white lg:mb-5 lg:text-7xl">
+            <p className="font-heading text-[3.75rem] leading-[4rem] font-bold text-white lg:mb-5 md:text-[6.875rem] md:leading-[7.2rem]">
               The good life,{" "}
               <span className="text-tertiary-200">continued.</span>
 
@@ -63,7 +64,7 @@ const IndexPage = ({ data }) => {
                   </li>
               ))} */}
             </p>
-            <p className="font-light text-white md:mb-4 lg:text-[2.125rem] lg:leading-[2.75rem]">
+            <p className="font-light text-white text-[1.5rem] leading-[2.125rem] md:text-[2.125rem] md:leading-[2.75rem] md:mb-4 lg:text-[2.125rem] lg:leading-[2.75rem]">
               Memory care and assisted living in a relaxed, home-like setting.
             </p>
             <ButtonSolid modal="modal-contact" altStyle={2} text="Contact Us" />
@@ -81,15 +82,15 @@ const IndexPage = ({ data }) => {
       {/* </section> */}
       </div>
 
-      <section className="mb-20 md:mb-32">
+      <section className="mb-20 md:mb-32 pt-8">
         <div className="container">
           <div className="grid items-center gap-y-10 md:grid-cols-2 md:gap-x-10 lg:gap-x-20">
             <div>
-              <h1>
+              <h1 className="font-bold text-body text-typography-heading text-[2.5rem] leading-[2.875rem] md:text-[3rem] md:leading-[3.625rem] font-heading">
                 Top Alzheimer’s & Dementia Care Serving Encinitas & North
                 County, CA
               </h1>
-              <p>
+              <p className="font-body font-normal text-typography-body text-[1rem] leading-[1.5rem]">
               RanchView is a memory care facility located in Olivenhain, a small community nestled between the coastal town of Encinitas and the suburb of Rancho Santa Fe.
               </p>
             </div>

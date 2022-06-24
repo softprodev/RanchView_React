@@ -41,8 +41,8 @@ const ServicesPage = (props) => {
   return (
     <Layout siteSettings={data.siteSettings} contactInfo={data.contactInfo}>
       <SearchEngineOptimization
-        title=""
-        description=""
+        title="Services"
+        description="RanchView | Wise Digital Partners"
         // openGraphImage={data.openGraphImage.publicURL}
         // twitterOpenGraphImage={data.twitterOpenGraphImage.publicURL}
       />
@@ -50,8 +50,8 @@ const ServicesPage = (props) => {
       <section className="pt-10 pb-20 md:pt-16 md:pb-24">
         <div className="container">
           <header className="mb-12 md:mb-18">
-            <h1 className="mb-0 font-heading font-bold text-5xl">Care Services in Greater San Diego</h1>
-            <h6 className="mb-0 font-body text-base leading-6 text-[#666666] pt-5">We provide care that helps our residents embrace life every day, age gracefully, and thrive. Ask us about our all-inclusive rates.</h6>
+            <h1 className="mb-0 font-heading font-bold text-typography-heading text-[2.5rem] leading-[2.875rem] md:text-[3rem] md:leading-[3.625rem]">Care Services in Greater San Diego</h1>
+            <p className="font-body font-normal text-typography-body text-[1rem] leading-[1.5rem] pt-5">We provide care that helps our residents embrace life every day, age gracefully, and thrive. Ask us about our all-inclusive rates.</p>
           </header>
           <div className="grid gap-y-12 md:grid-cols-3 md:gap-x-8">
             {data.allSanityServices.nodes &&
@@ -85,10 +85,9 @@ const ServicesPage = (props) => {
 
                       )
                       }
-                      <div className="font-heading font-bold text-base text-primary-900 pt-2">{node.title}</div>
-                      <div className="font-heading font-normal text-sm text-[#666666]  pt-4">{node.description}</div>
-
-                      <a className="font-heading font-bold text-base text-[#117263]" href={getServiceUrl(node.slug.current)}> Learn More</a>
+                      <h4 className="font-heading text-typography-heading font-bold text-[1.5rem] leading-[2.125rem]">{node.title}</h4>
+                      <p className="font-body font-normal text-typography-body text-[0.875rem] leading-[1.25rem]">{node.description}</p>
+                      <a className="font-body font-bold border-b-2 no-underline border-primary-500 text-primary-500 text-[1rem] leading-[1.5rem]" href={getServiceUrl(node.slug.current)}> Learn More</a>
                     </Link>
                 </div>
             ))}

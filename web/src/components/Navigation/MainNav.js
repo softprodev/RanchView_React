@@ -4,9 +4,14 @@ import { useOnClickOutside } from "../../hooks";
 import Link from "gatsby-plugin-transition-link";
 import { GatsbyImage } from "gatsby-plugin-image";
 
+
+import Banner from "../Faqs/Banner";
+
 import Burger from "./Burger";
 import OffCanvas from "./OffCanvas";
 import ButtonSolid from "../Button/ButtonSolid";
+import ButtonGhost_Mobile from "../Button/ButtonGhost_Mobile";
+import ButtonGhost from "../Button/ButtonGhost";
 // import {
 //   Accordion,
 //   AccordionItem,
@@ -14,7 +19,7 @@ import ButtonSolid from "../Button/ButtonSolid";
 //   AccordionItemState,
 //   AccordionItemPanel,
 // } from "react-accessible-accordion";
-// import phone from "../../images/global/phone.svg";
+import phone from "../../images/Global/phone.png";
 
 const MainNav = ({ navigationStyle, scrolled, offcanvasOffset }) => {
   // determine if offcanvas is open
@@ -31,6 +36,9 @@ const MainNav = ({ navigationStyle, scrolled, offcanvasOffset }) => {
   // handle click of navigation items
   const clickHandler = () => {
     setOffcanvasOpen(!offcanvasOpen);
+  };
+  const clickHandler_disabled = () => {
+    // setOffcanvasOpen(!offcanvasOpen);
   };
 
   // close offcanvas onclick outside
@@ -134,11 +142,13 @@ const MainNav = ({ navigationStyle, scrolled, offcanvasOffset }) => {
       aria-label="main-navigation"
     >
       <div className="container flex items-center justify-between">
-        {/* <div className="flex flex-auto items-center lg:hidden">
-          <a className="" href="tel:858-215-1710">
-            <img src={phone} width={32} />
+        <div className="flex flex-auto items-center lg:hidden">
+          <a className="" href="tel:760-753-5082">
+            {/* <img src={phone} width={32} /> */}
+            <i className="fas fa-phone"></i>
           </a>
-        </div> */}
+          
+        </div>
         <div className="flex flex-auto items-center justify-center lg:justify-start">
           <Link to="/">
             <GatsbyImage
@@ -236,7 +246,7 @@ const MainNav = ({ navigationStyle, scrolled, offcanvasOffset }) => {
                 })}
               </ul>
             </li>
-
+           
             <li>
               <Link
                 to="/reviews"
@@ -288,71 +298,87 @@ const MainNav = ({ navigationStyle, scrolled, offcanvasOffset }) => {
               offcanvasOffset={offcanvasOffset}
               id="offcanvas-navigation"
             >
-              <div className="relative h-full">
+              <div className="relative h-full bg-[#002E33] pt-12 pb-[105px]">
                 <ul
                   id="navigation-mobile"
-                  className="mb-16 space-y-8 text-center pb-9"
+                  className="mb-16 space-y-8 text-center pb-9 bg-[#002E33] px-6"
                 >
                   <li>                    
                     <ul
                       id="navigation-mobile"
-                      className="mb-16 space-y-8 text-center grid"
-                    >
-                      <p className="text-3xl font-bold text-gray-900 no-underline transition-colors duration-300 ease-linear hover:text-primary-500"
-                      >Programs</p>
-                      {navigation.programs.map((item, i) => {
-                        return (
-                            <Link
-                              to={item.href}
-                              className="text-xl font-normal text-gray-900 no-underline hover:text-primary-500"
-                            >
-                              {item.name}
-                            </Link>
-                        );
-                      })} 
+                      className="mb-8 space-y-8 text-center grid"
+                    >                      
+                      <Banner>
+                            <Banner.EntityNav key="0">                           
+                                <Banner.NavMenu>Programs</Banner.NavMenu> 
+                                {navigation.programs.map((item, i) => {
+                                  return (
+                                        <Banner.NavItem name={item.name} href={item.href}></Banner.NavItem>   
+                                    );
+                                })}
+                                <Banner.NavItem name="All Programs" href="services"></Banner.NavItem>   
+
+                            </Banner.EntityNav>
+                      </Banner>
                     </ul>                    
                   </li>
-
                   <li>                    
                     <ul
                       id="navigation-mobile"
-                      className="mb-16 space-y-8 text-center grid"
-                    >
-                      <p className="text-3xl font-bold text-gray-900 no-underline transition-colors duration-300 ease-linear hover:text-primary-500"
-                      >About</p>
-                      {navigation.about.map((item, i) => {
-                        return (
-                            <Link
-                              to={item.href}
-                              className="text-xl font-normal text-gray-900 no-underline hover:text-primary-500"
-                            >
-                              {item.name}
-                            </Link>
-                        );
-                      })} 
+                      className="space-y-8 text-center grid"
+                    >                      
+                      <Banner>
+                            <Banner.EntityNav key="0">                           
+                                <Banner.NavMenu>About</Banner.NavMenu> 
+                                {navigation.about.map((item, i) => {
+                                  return (
+                                        <Banner.NavItem name={item.name} href={item.href}></Banner.NavItem>   
+                                    );
+                                })}
+                            </Banner.EntityNav>
+                      </Banner>
                     </ul>                    
                   </li>
-
                   <li>
                     <Link
                       to="/reviews"
                       onClick={clickHandler}
-                      className="text-3xl font-bold text-gray-900 no-underline transition-colors duration-300 ease-linear hover:text-primary-500"
+                      className="text-[34px] mb-16 leading-[2.125rem] font-heading font-bold text-white no-underline transition-colors duration-300 ease-linear hover:text-primary-500"
                     >
                       Reviews
                     </Link>
                   </li>
-
                   <li>
                     <Link
                       to="/blog"
                       onClick={clickHandler}
-                      className="text-3xl font-bold text-gray-900 no-underline transition-colors duration-300 ease-linear hover:text-primary-500"
+                      className="text-[34px] mb-16 leading-[2.125rem] font-heading font-bold text-white no-underline transition-colors duration-300 ease-linear hover:text-primary-500"
                     >
                       Blog
                     </Link>
                   </li>
-
+                  <li>
+                    <p
+                      // to=""
+                      // disabled={true}
+                      // onClick={clickHandler_disabled}
+                      className="text-[34px] mb-6 pt-40 leading-[2.125rem] font-heading font-bold text-white no-underline"
+                    >
+                      Contact
+                    </p>
+                  </li>
+                  <li>
+                    <ul
+                      id="navigation-mobile"
+                      className="mb-2 space-y-8 text-center grid"
+                    >                       
+                      <ButtonGhost_Mobile
+                          modal="modal-contact"
+                          text="(760) 753 5082"
+                          className="w-full lg:w-auto"
+                        />
+                    </ul>
+                  </li>
                   <li>
                     <ul
                       id="navigation-mobile"
@@ -366,7 +392,7 @@ const MainNav = ({ navigationStyle, scrolled, offcanvasOffset }) => {
                         />
                     </ul>
                   </li>
-                </ul>
+                </ul>                
               </div>
             </OffCanvas>
           </div>

@@ -19,8 +19,8 @@ const PrivacyPolicyPage = () => {
   return (
     <Layout siteSettings={data.siteSettings} contactInfo={data.contactInfo}>
       <SearchEngineOptimization
-        title="Privacy Policy | Joe Valadao"
-        description=""
+        title="Privacy Policy"
+        description="RanchView | Wise Digital Partners"
       />
       <section className="md:pb-30 pt-12 pb-20 md:pt-16">
         <div className="container">

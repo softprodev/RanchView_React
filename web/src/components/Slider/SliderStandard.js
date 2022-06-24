@@ -77,19 +77,19 @@ const Slider = ({ slides }) => {
                           </div>
                         )}
                       <cite className="not-italic">
-                        <div className="mb-0 text-xl font-medium text-typography-heading">
+                        <div className="mb-0 text-body text-typography-heading font-medium text-[1.25rem] leading-[1.875rem]">
                           {testimonial.name}
                         </div>
-                        {testimonial.businessNameTitle && (
+                        {/* {testimonial.businessNameTitle && (
                           <div className="text-sm font-medium uppercase tracking-widest text-gray-300">
                             {testimonial.businessNameTitle}
                           </div>
-                        )}
+                        )} */}
                       </cite>
                     </div>
                   </footer>
 
-                  <q className="mb-10 before:hidden">{testimonial.review}</q>
+                  <q className="mb-10 before:hidden font-body text-typography-body font-normal text-[1rem] leading-[1.5rem]">{testimonial.review}</q>
 
                   {/* <img src={stars} className="mb-3" /> */}
 

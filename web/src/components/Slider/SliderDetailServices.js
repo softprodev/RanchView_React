@@ -41,7 +41,7 @@ const StyledSlider = styled.div`
 // const Slider = ({ slides, sectionNumber }) => {
 const SliderDetailServices = ({ slides, sectionNumber }) => {
     return (
-      <StyledSlider className="relative bg-[#F0F6F7]">
+      <StyledSlider className="relative md:bg-[#F0F6F7]">
         {slides.map((slide, i) => {
                 return (
                   <div className="py-2" key={i}>
@@ -51,7 +51,7 @@ const SliderDetailServices = ({ slides, sectionNumber }) => {
                       <Link
                         to={slide.link}
                         // style={{ textDecoration: 'none' }}
-                        className={`inline font-body font-semibold underline`}
+                        className={`inline font-body font-bold text-primary-500 text-[1rem] leading-[1.5rem] underline border-b-2 no-underline border-primary-500`}
                       >
                         {slide.heading}
                       </Link>
@@ -61,7 +61,7 @@ const SliderDetailServices = ({ slides, sectionNumber }) => {
                       <Link
                         to={slide.link}
                         style={{ textDecoration: 'none' }}
-                        className={`inline font-body font-semibold underline`}
+                        className={`inline font-body font-bold text-primary-500 text-[1rem] leading-[1.5rem] underline`}
                       >
                         {slide.heading}
                       </Link>

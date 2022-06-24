@@ -39,6 +39,7 @@ import faqs from "./documents/about/faqs";
 import career from "./documents/about/career";
 import contactInfo from "./documents/contactInfo";
 import lifestylesection from "./documents/lifestylesection";
+import jobs from "./documents/about/jobs";
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -89,5 +90,6 @@ export default createSchema({
       link,
       coordinates,
       defaultImage,
+      jobs,
    ]),
 });

@@ -54,6 +54,36 @@ export default {
          name: "thirdsectioncontent",
          type: "text",
       }, 
+      {
+         title: "Sub Title 1",
+         name: "subtitle1",
+         type: "string",
+      },
+      {
+         title: "Sub Description 1",
+         name: "description1",
+         type: "bodyPortableText",
+      },
+      {
+         title: "Sub Title 2",
+         name: "subtitle2",
+         type: "string",
+      },
+      {
+         title: "Sub Description 2",
+         name: "description2",
+         type: "bodyPortableText",
+      },
+      {
+         title: "Sub Title 3",
+         name: "subtitle3",
+         type: "string",
+      },
+      {
+         title: "Sub Description 3",
+         name: "description3",
+         type: "bodyPortableText",
+      },
     ],
     orderings: [
        {

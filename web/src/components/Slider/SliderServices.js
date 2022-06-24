@@ -185,8 +185,8 @@ export default class Slider extends Component {
                         />
                       </div>
                       <div className="md:pr-10 lg:pt-18 lg:pr-16">
-                        <h3 className="heading-four">{slide.heading}</h3>
-                        <p>{slide.text}</p>
+                        <h3 className="font-heading font-bold text-[1.5rem] leading-[2.125rem] text-typography-heading">{slide.heading}</h3>
+                        <p className="font-body font-normal text-[1rem] leading-[1.5rem] text-typography-body">{slide.text}</p>
                         {slide.link && (
                           <ButtonGhost
                             altStyle={2}

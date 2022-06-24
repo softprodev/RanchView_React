@@ -13,7 +13,7 @@ const Reviews = ({ headingLevel, className }) => {
       <section className={`${className || "mb-20 md:mb-32"}`}>
         <div className="container">
           <header className="mb-12 md:mb-14">
-            <HeadingTag>Why Us</HeadingTag>
+            <HeadingTag className="font-heading text-typography-heading font-bold text-[2.5rem] leading-[3rem]">Why Us</HeadingTag>
           </header>
           <div className="grid gap-y-10 md:grid-cols-2 md:gap-y-14 md:gap-x-12 lg:gap-x-24">
             <div className="flex space-x-3">
@@ -27,10 +27,10 @@ const Reviews = ({ headingLevel, className }) => {
                 />
               </div>
               <div>
-                <div className="mb-3 text-lg font-medium text-typography-heading">
+                <div className="mb-3 font-heading text-typography-heading font-bold text-[1.5rem] leading-[2.125rem]">
                   Respect & Dignity
                 </div>
-                <p className="mb-0">
+                <p className="mb-0 font-body text-typography-body font-normal text-[1rem] leading-[1.5rem]">
                   We foster personal relationships with our residents and their
                   families with the highest integrity.
                 </p>
@@ -48,10 +48,10 @@ const Reviews = ({ headingLevel, className }) => {
                 />
               </div>
               <div>
-                <div className="mb-3 text-lg font-medium text-typography-heading">
+                <div className="mb-3 font-heading text-typography-heading font-bold text-[1.5rem] leading-[2.125rem]">
                   Compassionate Care
                 </div>
-                <p className="mb-0">
+                <p className="mb-0 font-body text-typography-body font-normal text-[1rem] leading-[1.5rem]">
                   At RanchView, we care for our residents as if they’re our own
                   family members.
                 </p>
@@ -69,10 +69,10 @@ const Reviews = ({ headingLevel, className }) => {
                 />
               </div>
               <div>
-                <div className="mb-3 text-lg font-medium text-typography-heading">
+                <div className="mb-3 font-heading text-typography-heading font-bold text-[1.5rem] leading-[2.125rem]">
                   Trust
                 </div>
-                <p className="mb-0">
+                <p className="mb-0 font-body text-typography-body font-normal text-[1rem] leading-[1.5rem]">
                   Our team includes trained nurses, Certificated Nursing
                   Assistants (CNAs), and other medical and mental health
                   professionals.
@@ -91,10 +91,10 @@ const Reviews = ({ headingLevel, className }) => {
                 />
               </div>
               <div>
-                <div className="mb-3 text-lg font-medium text-typography-heading">
+                <div className="mb-3 font-heading text-typography-heading font-bold text-[1.5rem] leading-[2.125rem]">
                   Safety
                 </div>
-                <p className="mb-0">
+                <p className="mb-0 font-body text-typography-body font-normal text-[1rem] leading-[1.5rem]">
                   We have a secured perimeter environment and trained staff
                   available 24 hours a day, 7 days a week.
                 </p>

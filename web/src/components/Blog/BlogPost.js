@@ -23,7 +23,16 @@ import CallToAction from "../Repeating/CTA";
 import RecentPosts from "../Repeating/RecentPosts";
 
 const StyledContent = styled.div`
-  p,
+  p{
+    //styleName: Body Large/Large;
+    font-family: Catamaran;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 30px;
+    letter-spacing: 0em;
+    text-align: left;
+    
+  },
   span,
   li {
     ${tw`md:text-xl`}
@@ -128,7 +137,7 @@ function BlogPost(props) {
         <div className="container">
           <div className="mx-auto max-w-[720px]">
             <header className="mb-8 md:mb-10">
-              <h1 className="text-black">{title}</h1>
+              <h1 className="font-heading text-typography-heading font-bold text-[2.5rem] leading-[2.875rem] md:text-[3rem] md:leading-[3.625rem]">{title}</h1>
             </header>
 
             <div className="flex items-center justify-between space-y-8">
@@ -152,13 +161,13 @@ function BlogPost(props) {
 
                   <div>
                     {author && (
-                      <div className="text-primary-200">
+                      <div className="text-typography-heading font-semibold font-body text-[0.875rem] leading-[1.25rem]">
                         By <b>{author.name}</b>
                       </div>
                     )}
 
                     {publishedAt && (
-                      <div className="text-sm font-normal text-black">
+                      <div className="text-typography-body font-normal font-body text-[0.875rem] leading-[1.25rem]">
                         {differenceInDays(new Date(publishedAt), new Date()) > 3
                           ? formatDistance(new Date(publishedAt), new Date())
                           : format(new Date(publishedAt), "MMMM d, yyyy")}
@@ -217,7 +226,7 @@ function BlogPost(props) {
             </div>
           )}
 
-            <StyledContent>
+            <StyledContent className="font-body font-normal text-typography-body text-[1.25rem] leading-[1.5rem]">
               {_rawBody && <PortableText blocks={_rawBody} />}
             </StyledContent>
 

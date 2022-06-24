@@ -46,7 +46,7 @@ function BlogPostPreview(props) {
           <ul className="flex flex-wrap md:flex-nowrap">
             {props.categories.map((category, i) => (
               <li
-                className="font-heading text-sm font-extrabold uppercase tracking-wide text-gray-300"
+                className="uppercase font-heading text-primary-500 font-bold text-[0.875rem] leading-[1.125rem]"
                 key={i}
               >
                 {i > 0 ? <>, {category.title}</> : category.title}
@@ -63,7 +63,7 @@ function BlogPostPreview(props) {
           </div>
         )} */}
       </div>
-      <div className="font-heading text-xl text-primary-900">{props.title}</div>
+      <div className="font-heading text-typography-heading font-bold text-[1.5rem] leading-[2.125rem]">{props.title}</div>
     </Link>
   );
 }

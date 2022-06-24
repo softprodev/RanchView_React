@@ -12,7 +12,7 @@ const ContactDiv = ({
   const HeadingTag = headingLevel || "h2";
 
   return (
-    <div className="container">
+    <div className="container hidden md:block">
       <div className="-w-[704px] text-center mb-2 py-3 md:mb-2">
           <div className="items-right justify-start space-y-4 md:flex md:space-y-0 md:space-x-4">
             <ButtonGhost href="tel:760-753-5082" text={phonenumber} />

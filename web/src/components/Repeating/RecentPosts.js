@@ -70,7 +70,10 @@ const RecentPosts = ({ node, className }) => {
                         />
                       </div>
                     )}
-                    <div className="font-heading text-xl text-primary-900">
+                    <div className="uppercase font-heading text-primary-500 font-bold text-[0.875rem] leading-[1.125rem]">
+                      Category
+                    </div>
+                    <div className="font-heading text-typography-heading font-bold text-[1.5rem] leading-[2.125rem]">
                       {node.title}
                     </div>
                   </Link>
